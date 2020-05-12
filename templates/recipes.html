@@ -1,8 +1,30 @@
-{% extends 'base.html' %}
-{% block content %}
-    {% for recipe in recipes %}
-        {{recipe.recipe_name}}
-        {{recipe.is_healthy}}
-        {{recipe.recipe_cost}}
-    {% endfor %}
+{% extends 'base.html' %} {% block content %}
+
+<div class="row">
+  {% for recipe in recipes %}
+  <div class="col s12 m3">
+    <div class="card">
+      <div class="card-image">
+        <img src="static/images/pancakes.jpg" />
+        <span class="card-title">{{recipe.recipe_name}}</span>
+      </div>
+      <div class="card-content">
+        {{recipe.recipe_description}}
+      </div>
+      <!-- <div class="card-action">
+        <a href="#">This is a link</a>
+      </div> -->
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- <div>
+    <img src="static/images/pancakes.jpg">
+  </div> -->
+
 {% endblock %}
+
+<!-- 
+{{recipe.recipe_name}}
+{{recipe.is_healthy}} {{recipe.recipe_cost}} -->
