@@ -1,23 +1,51 @@
 {% extends 'base.html' %} {% block content %}
 
-<h2>Recipes</h2>
-
-<div class="row">
-  <div class="container w">
+  <div class="container">
+    <div class="row">
+    <h2 class="cursive">Recipes</h2>
     {% for recipe in recipes %}
     <a href="#">
       <div class="col s12 m6 l4">
         <div class="card small">
-          <div class="card-image">
-            <img src="{{recipe.recipe_image}}"/>
+          <div class="card-image overlay">
+            <img class="landing-recipe-images" src="{{recipe.recipe_image}}" />
             <span class="card-title">{{recipe.recipe_name}}</span>
           </div>
-          <div class="card-content">
-            {{recipe.recipe_description}}
+          <div class="card-content activator">
+            <!-- <div class="card-content-time"> -->
+            <p class="activator">Recipe time: {{recipe.recipe_time}} minutes</p>
+            <br class="activator" />
+            <p class="activator">Recipe cost: £{{recipe.recipe_cost}}</p>
+            <br class="activator" />
+            <br class="activator" />
+            <p class="activator blue-text">Click for recipe description</p>
+            <!-- </div> -->
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4"
+              >Card Title<i class="material-icons right">close</i></span
+            >
+            <p>{{recipe.recipe_description}}</p>
           </div>
         </div>
       </div>
     </a>
+    <!-- testing -->
+    <!-- <a>
+    <div class="card small">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="1drink.jpg">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+      <p><a href="#">This is a link</a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+    </div>
+  </div>
+    </a> -->
     {% endfor %}
   </div>
 </div>

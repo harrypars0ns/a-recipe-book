@@ -3,53 +3,135 @@
 <div class="container">
   <div class="row">
     <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
+      <!-- RECIPE NAME -->
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">assignment</i>
-          <input id="recipe_name" name="recipe_name" type="text" />
+          <input id="recipe_name" name="recipe_name" type="text" required/>
           <label for="icon_prefix">Recipe Name</label>
         </div>
       </div>
+      <!-- RECIPE DESCRIPTION -->
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">subject</i>
-          <textarea
+          <input
             name="recipe_description"
             id="recipe_description"
-            class="materialize-textarea"
-            maxlength="100"
-          ></textarea>
+            maxlength="60"
+            type="text"
+            required
+          ></input>
           <label for="icon_telephone">Recipe Description</label>
         </div>
       </div>
+      <!-- RECIPE COST -->
       <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">assignment</i>
+        <div class="input-field col s10">
+          <i class="material-icons prefix">attach_money</i>
           <input id="recipe_cost" name="recipe_cost" type="text" />
           <label for="icon_prefix">Recipe Cost</label>
         </div>
       </div>
-       <div class="row">
+      <!-- <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">local_pizza</i>
           <input id="cuisine_name" name="cuisine_name" type="text" />
           <label for="icon_prefix">Cuisine Category</label>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">camera_alt</i>
-          <input id="recipe_image" name="recipe_image" type="text" required />
-          <label for="icon_prefix">Recipe Image - Enter URL</label>
+      </div> -->
+      <!-- PREP/COOK TIME SLIDER -->
+    <div class="row">
+        <div class="col s10">
+            <i class="material-icons prefix">access_time</i>
+            <label for="icon_prefix">Prep/Cook Time (Minutes)</label>
+            <p class="range-field">
+                <input id="recipe_time" name="recipe_time" type="range" id="test5" min="0" max="90" />
+            </p>
         </div>
-        <div class="switch">
-          <label>
+    </div>
+      <!-- IMAGE/CUISINE SELECT -->
+      <div class="row">
+        <div class="input-field col s11 m6">
+            <i class="material-icons prefix">camera_alt</i>
+            <select id="image" name="recipe_image" class="icons">
+              <option value="" disabled selected>Choose your image!</option>
+
+              <option
+                value="static/images/1drink.jpg"
+                data-icon="static/images/1drink.jpg"
+                >Beverage</option
+              >
+              <option
+                value="static/images/2breakfast.jpg"
+                data-icon="static/images/2breakfast.jpg"
+                >Breakfast</option
+              >
+              <option
+                value="static/images/3dessert.jpg"
+                data-icon="static/images/3dessert.jpg"
+                >Dessert</option
+              >
+              <option
+                value="static/images/4snack.jpg"
+                data-icon="static/images/4snack.jpg"
+                >Snack</option
+              >
+              <option
+                value="static/images/5meat.jpg"
+                data-icon="static/images/5meat.jpg"
+                >Meat</option
+              >
+              <option
+                value="static/images/6vegetables.jpg"
+                data-icon="static/images/6vegetables.jpg"
+                >Vegetables</option
+              >
+              <option
+                value="static/images/7salad.jpg"
+                data-icon="static/images/7salad.jpg"
+                >Salad</option
+              >
+              <option
+                value="static/images/8indian.jpg"
+                data-icon="static/images/8indian.jpg"
+                >Indian</option
+              >
+              <option
+                value="static/images/italian.jpg"
+                data-icon="static/images/italian.jpg"
+                >Italian</option
+              >
+              <option
+                value="static/images/mexican.jpg"
+                data-icon="static/images/mexican.jpg"
+                >Mexican</option
+              >
+            </select>
+          <label>Images in select</label>
+          </div>
+      </div>
+      <!-- Switches -->
+      <div class="row">
+        <div class="switch col s6">
+          <i class="material-icons prefix weight">fitness_center</i>
+          <label class="healthy-label">
             <input id="is_healthy" name="is_healthy" type="checkbox" />
             <span class="lever"></span>
             Healthy!
           </label>
         </div>
+        <div class="s1 m0 l0"></div>
+        <div class="switch col s6">
+          <i class="material-icons prefix weight">favorite</i>
+          <label class="healthy-label">
+            <input id="is_favorite" name="is_favorite" type="checkbox" />
+            <span class="lever"></span>
+            Favorite!
+          </label>
       </div>
+      </div>
+      <br>
       <div class="row">
         <button
           class="btn waves-effect waves-light"
@@ -63,17 +145,20 @@
     </form>
   </div>
 </div>
+
 {% endblock %}
 
 <!-- <div class="row">
-  <div class="input-field col s12">
-    <i class="material-icons prefix">poll</i>
-    <select id="cuisine" name="cuisine_name">
-      <option value="" disabled selected>Choose Cuisine</option>
-      {% for cuisine in cuisines %}
-      <option value="{{cuisine.cuisine_name}}">{{cuisine.cuisine_name}}</option>
-      {% endfor %}
-    </select>
-    <label>Recipe Category</label>
-  </div>
-</div> -->
+        <div class="input-field col s12">
+          <i class="material-icons prefix">poll</i>
+          <select id="cuisine" name="cuisine_name">
+            <option value="" disabled selected>Choose Cuisine</option>
+            {% for cuisine in cuisines %}
+            <option value="{{cuisine.cuisine_name}}"
+              >{{cuisine.cuisine_name}}</option
+            >
+            {% endfor %}
+          </select>
+          <label>Recipe Category</label>
+        </div>
+      </div> -->

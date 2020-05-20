@@ -1,8 +1,64 @@
-.w {
-    width: 90%;
+
+
+nav .brand-logo {
+    font-size: 1.7rem;
+    margin-left: 0px;
 }
 
+.cursive{
+    font-family: 'Balsamiq Sans', cursive;
+}
 
-/* .card-content{
-    height: 20px;
+/* .outside{
+    background-image: url('../images/grass7.jpg');
+    height: 100%;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 0px;
 } */
+
+.caret {
+  height: 0px !important;
+}
+
+.weight {
+  padding-left: 60px;
+}
+
+.lever {
+  margin-left: 10px;
+}
+
+.healthy-label {
+  margin-left: 10px !important;
+}
+
+.range-field {
+  margin-left: 43.5px;
+}
+
+.overlay {
+  background: black;
+}
+
+.landing-recipe-images {
+  opacity: 0.6;
+}
+
+.card-content {
+    position: relative;
+    color: black;
+}
+
+p {
+    position: absolute; */
+    bottom: 0;
+}
+
+@media (min-width: 994px){
+    nav .brand-logo {
+    margin-left: 50px;
+    }   
+}
