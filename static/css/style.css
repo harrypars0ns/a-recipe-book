@@ -51,11 +51,18 @@ nav .brand-logo {
     position: relative;
     color: black;
 }
-
+.card-reveal{
+    postition: relative;
+}
 p {
     position: absolute; */
     bottom: 0;
 }
+.content-buttons{
+    position: absolute;
+    bottom: 10px;;
+}
+
 
 @media (min-width: 994px){
     nav .brand-logo {
