@@ -9,19 +9,7 @@ nav .brand-logo {
     font-family: 'Balsamiq Sans', cursive;
 }
 
-/* .outside{
-    background-image: url('../images/grass7.jpg');
-    height: 100%;
-    background-attachment: fixed;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border: 0px;
-} */
 
-.caret {
-  height: 0px !important;
-}
 
 .weight {
   padding-left: 60px;
@@ -62,6 +50,20 @@ p {
     position: absolute;
     bottom: 10px;;
 }
+
+.card-title-reveal{
+    font-size: 20px;
+}
+
+
+
+
+/* ADD RECIPE */
+.caret {
+  height: 0px !important;
+}
+
+
 
 
 @media (min-width: 994px){
