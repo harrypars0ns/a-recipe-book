@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-<h3>Add Recipe</h3>
+<h3>Edit Recipe</h3>
 <div class="container">
   <div class="row">
     <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
@@ -48,57 +48,63 @@
             <i class="material-icons prefix">camera_alt</i>
             <select id="cuisine" name="recipe_cuisine" class="icons">
               <option value="" disabled selected>Choose your image!</option>
-
-              <option
-                value="static/images/1drink.jpg"
-                data-icon="static/images/1drink.jpg"
+            <!-- {% for cuisine in cuisines %} -->
+                <!-- {% if cuisine.recipe_image == recipe.recipe_image %} -->
+                <!-- <option value="{{cuisine.cuisine_name}}" selected>{{cuisine.cuisine_name}}</option> -->
+                <!-- {% else %} -->
+                <option value="{{cuisine.recipe_image}}" data-icon="{{cuisine.recipe_image}}" >{{cuisine.cuisine_name}}</option>
+                <!-- {% endif %}   -->
+            <!-- {% endfor %}  -->
+               <!-- <option
+                value="/static/images/1drink.jpg"
+                data-icon="/static/images/1drink.jpg"
                 >Beverage</option
               >
               <option
-                value="static/images/2breakfast.jpg"
-                data-icon="static/images/2breakfast.jpg"
+                value="/static/images/2breakfast.jpg"
+                data-icon="/static/images/2breakfast.jpg"
                 >Breakfast</option
               >
               <option
-                value="static/images/3dessert.jpg"
-                data-icon="static/images/3dessert.jpg"
+                value="/static/images/3dessert.jpg"
+                data-icon="/static/images/3dessert.jpg"
                 >Dessert</option
               >
               <option
-                value="static/images/4snack.jpg"
-                data-icon="static/images/4snack.jpg"
+                value="/static/images/4snack.jpg"
+                data-icon="/static/images/4snack.jpg"
                 >Snack</option
               >
               <option
-                value="static/images/5meat.jpg"
-                data-icon="static/images/5meat.jpg"
+                value="/static/images/5meat.jpg"
+                data-icon="/static/images/5meat.jpg"
                 >Meat</option
               >
               <option
-                value="static/images/6vegetables.jpg"
-                data-icon="static/images/6vegetables.jpg"
+                value="/static/images/6vegetables.jpg"
+                data-icon="/static/images/6vegetables.jpg"
                 >Vegetables</option
               >
               <option
-                value="static/images/7salad.jpg"
-                data-icon="static/images/7salad.jpg"
+                value="/static/images/7salad.jpg"
+                data-icon="/static/images/7salad.jpg"
                 >Salad</option
               >
               <option
-                value="static/images/8indian.jpg"
-                data-icon="static/images/8indian.jpg"
+                value="/static/images/8indian.jpg"
+                data-icon="/static/images/8indian.jpg"
                 >Indian</option
               >
               <option
-                value="static/images/italian.jpg"
-                data-icon="static/images/italian.jpg"
+                value="/static/images/italian.jpg"
+                data-icon="/static/images/italian.jpg"
                 >Italian</option
               >
               <option
-                value="static/images/mexican.jpg"
-                data-icon="static/images/mexican.jpg"
+                value="/static/images/mexican.jpg"
+                data-icon="/static/images/mexican.jpg"
                 >Mexican</option
-              >
+              > --> 
             </select>
           <label>Images in select</label>
           </div>
@@ -140,17 +146,3 @@
 
 {% endblock %}
 
-<!-- <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">poll</i>
-          <select id="cuisine" name="cuisine_name">
-            <option value="" disabled selected>Choose Cuisine</option>
-            {% for cuisine in cuisines %}
-            <option value="{{cuisine.cuisine_name}}"
-              >{{cuisine.cuisine_name}}</option
-            >
-            {% endfor %}
-          </select>
-          <label>Recipe Category</label>
-        </div>
-      </div> -->

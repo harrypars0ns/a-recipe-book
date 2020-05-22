@@ -28,6 +28,46 @@ def insert_recipe():
             return redirect(url_for('get_recipes'))
 
 
+@app.route('/edit_recipe/<recipe_id>')
+def edit_recipe(recipe_id):
+    the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    all_cuisines = mongo.db.cuisines.find()
+    return render_template('editrecipe.html', recipe=the_recipe,
+                           cuisines=all_cuisines)
+
+
+
+
+@app.route('/update_recipe/<recipe_id>', methods=["POST"])
+def update_recipe(recipe_id):
+    recipes = mongo.db.recipes
+    recipes.update( {'_id': ObjectId(recipe_id)},
+    {
+        'recipe_name':request.form.get('recipe_name'),
+        'recipe_description': request.form.get('recipe_description'),
+        'recipe_cost': request.form.get('recipe_cost'),
+        'recipe_time':request.form.get('recipe_time'),
+        'is_healthy':request.form.get('is_healthy'),
+        'is_favorite':request.form.get('is_favorite'),
+        'recipe_cuisine':request.form.get('recipe_cuisine')
+
+
+
+    })
+    return redirect(url_for('get_recipes'))
+
+
+# @app.route('/delete_recipe/<recipe_id>')
+# def delete_recipe(recipe_id):
+#     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
+#     return redirect(url_for('get_recipes'))
+
+
+
+
+
+
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
