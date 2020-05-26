@@ -49,13 +49,13 @@
             <i class="material-icons prefix">camera_alt</i>
             <select id="cuisine" name="recipe_cuisine" class="icons" required>
               <option value="" disabled selected>Choose your image!</option>
-            {% for cuisine in cuisines %}
-                {% if cuisine.recipe_image == recipe.recipe_cuisine %}
-                <option value="{{cuisine.cuisine_name}}" data-icon="{{cuisine.recipe_image}}" selected>{{cuisine.cuisine_name}}</option>
-                {% else %}
-                <option value="{{cuisine.recipe_image}}" data-icon="{{cuisine.recipe_image}}" >{{cuisine.cuisine_name}}</option>
-                {% endif %}  
-            {% endfor %} 
+                    {% for cuisine in cuisines %}
+                        {% if cuisine.cuisine_image == recipe.recipe_cuisine_image %}
+                            <option value="{{cuisine.cuisine_image}}" data-icon="{{cuisine.cuisine_image}}" selected >{{cuisine.cuisine_name}}</option>
+                        {% else %}
+                            <option value="{{cuisine.cuisine_image}}" data-icon="{{cuisine.cuisine_image}}" >{{cuisine.cuisine_name}}</option>
+                        {% endif %}  
+                    {% endfor %} 
                <!-- <option
                 value="/static/images/1drink.jpg"
                 data-icon="/static/images/1drink.jpg"
