@@ -1,8 +1,8 @@
 {% extends 'base.html' %} {% block content %}
-<h3>Edit Recipe</h3>
 <div class="container">
+<h2 class="cursive">{{ page_title }}</h2>
   <div class="row">
-    <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
+    <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">
       <!-- RECIPE NAME -->
       <div class="row">
         <div class="input-field col s12">
@@ -28,14 +28,16 @@
       </div>
       <!-- RECIPE COST -->
       <div class="row">
-        <div class="input-field col s10">
+        <div class="col s10 m12">
           <i class="material-icons prefix">attach_money</i>
-          <input id="recipe_cost" name="recipe_cost" type="text" value="{{recipe.recipe_cost}}" />
-          <label for="icon_prefix">Recipe Cost</label>
+            <label for="icon_prefix">Recipe Cost</label>
+            <p class="range-field">
+            <input id="recipe_cost" name="recipe_cost" type="range" id="test5" min="0" max="90" value="{{recipe.recipe_cost}}"/>
+            </p>
         </div>
       </div>
     <div class="row">
-        <div class="col s10">
+        <div class="col s10 m12">
             <i class="material-icons prefix">access_time</i>
             <label for="icon_prefix">Prep/Cook Time (Minutes)</label>
             <p class="range-field">
@@ -45,9 +47,9 @@
     </div>
       <!-- IMAGE/CUISINE SELECT -->
       <div class="row">
-        <div class="input-field col s11 m6">
+        <div class="input-field col s11 m10">
             <i class="material-icons prefix">camera_alt</i>
-            <select id="cuisine" name="recipe_cuisine" class="icons" required>
+            <select id="cuisine_image" name="recipe_cuisine_image" class="icons" required>
               <option value="" disabled selected>Choose your image!</option>
                     {% for cuisine in cuisines %}
                         {% if cuisine.cuisine_image == recipe.recipe_cuisine_image %}
@@ -56,56 +58,6 @@
                             <option value="{{cuisine.cuisine_image}}" data-icon="{{cuisine.cuisine_image}}" >{{cuisine.cuisine_name}}</option>
                         {% endif %}  
                     {% endfor %} 
-               <!-- <option
-                value="/static/images/1drink.jpg"
-                data-icon="/static/images/1drink.jpg"
-                >Beverage</option
-              >
-              <option
-                value="/static/images/2breakfast.jpg"
-                data-icon="/static/images/2breakfast.jpg"
-                >Breakfast</option
-              >
-              <option
-                value="/static/images/3dessert.jpg"
-                data-icon="/static/images/3dessert.jpg"
-                >Dessert</option
-              >
-              <option
-                value="/static/images/4snack.jpg"
-                data-icon="/static/images/4snack.jpg"
-                >Snack</option
-              >
-              <option
-                value="/static/images/5meat.jpg"
-                data-icon="/static/images/5meat.jpg"
-                >Meat</option
-              >
-              <option
-                value="/static/images/6vegetables.jpg"
-                data-icon="/static/images/6vegetables.jpg"
-                >Vegetables</option
-              >
-              <option
-                value="/static/images/7salad.jpg"
-                data-icon="/static/images/7salad.jpg"
-                >Salad</option
-              >
-              <option
-                value="/static/images/8indian.jpg"
-                data-icon="/static/images/8indian.jpg"
-                >Indian</option
-              >
-              <option
-                value="/static/images/italian.jpg"
-                data-icon="/static/images/italian.jpg"
-                >Italian</option
-              >
-              <option
-                value="/static/images/mexican.jpg"
-                data-icon="/static/images/mexican.jpg"
-                >Mexican</option
-              > --> 
             </select>
           <label>Images in select</label>
           </div>
@@ -145,7 +97,7 @@
           type="submit"
           name="action"
         >
-          Add Recipe
+          Update Recipe
           <i class="material-icons right">playlist_add</i>
         </button>
       </div>

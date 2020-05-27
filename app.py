@@ -11,16 +11,22 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_recipes')
 def get_recipes():
-    return render_template("recipes.html", recipes=mongo.db.recipes.find(), cuisines=mongo.db.cuisines.find()
+    return render_template("recipes.html", page_title="Recipes", recipes=mongo.db.recipes.find(), cuisines=mongo.db.cuisines.find()
     )
+
+
+@app.route('/playaround')
+def playaround():
+
+    return render_template("playaround.html", page_title="Playaround", recipes=mongo.db.recipes.find(), cuisines=mongo.db.cuisines.find())
 
 
 @app.route('/add_recipe')
 def add_recipe():
     the_recipe = mongo.db.recipes.find()
     all_cuisines = mongo.db.cuisines.find()
-    return render_template('addrecipe.html', recipe=the_recipe,
-                           cuisines=all_cuisines)   
+    return render_template('addrecipe.html', page_title="Add Recipe", recipe=the_recipe, cuisines=all_cuisines, ing=[])   
+
 
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
@@ -33,8 +39,7 @@ def insert_recipe():
 def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     all_cuisines = mongo.db.cuisines.find()
-    return render_template('editrecipe.html', recipe=the_recipe,
-                           cuisines=all_cuisines)
+    return render_template('editrecipe.html', page_title="Edit Recipe", recipe=the_recipe, cuisines=all_cuisines)
 
 
 
@@ -50,7 +55,7 @@ def update_recipe(recipe_id):
         'recipe_time':request.form.get('recipe_time'),
         'is_healthy':request.form.get('is_healthy'),
         'is_favorite':request.form.get('is_favorite'),
-        'recipe_cuisine':request.form.get('recipe_cuisine')
+        'recipe_cuisine_image':request.form.get('recipe_cuisine_image')
 
 
 

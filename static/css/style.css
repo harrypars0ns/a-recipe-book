@@ -6,7 +6,7 @@ nav .brand-logo {
 }
 
 .cursive{
-    font-family: 'Balsamiq Sans', cursive;
+    /* font-family: 'Balsamiq Sans', cursive; */
 }
 
 
@@ -63,7 +63,9 @@ p {
   height: 0px !important;
 }
 
-
+/* .amount{
+    padding-top: 25px !important;
+} */
 
 
 @media (min-width: 994px){

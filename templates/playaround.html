@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% block content %}
+<h3>{{ page_title }}</h3>
+<div class="container">
+  <div class="row">
+      
+        {% for cuisine in cuisines %}
+        {% endfor %}
+        {% for recipe in recipes %}
+        {% endfor %}
+
+</div>
+
+
+<div id="green" class="row">
+    <a class="waves-effect waves-light green btn">button</a>
+</div>
+
+<br>
+<br>
+{% for a in arr %}
+<h1><span id="thisone">5</span></h1>
+{% endfor %}
+<br>
+<br>
+
+
+<div class="row countBtn">
+<a id="red" class="waves-effect waves-light red btn" action="{{ url_for('add_ingredient') }}">button</a>
+</div>
+
+
+
+  
+  </div>
+
+
+  
+
+{% endblock %}
+
+

@@ -2,23 +2,25 @@
 
 <div class="container">
   <div class="row">
-    <h2 class="cursive">Recipes</h2>
+    <h2 class="cursive">{{ page_title }}</h2>
     {% for recipe in recipes %}
     <a href="#">
       <div class="col s12 m6 l4">
         <div class="card small">
           <div class="card-image overlay">
-            
             <img class="landing-recipe-images" src="{{recipe.recipe_cuisine_image}}"/>
             <span class="card-title">{{recipe.recipe_name}}</span>
           </div>
-          <div class="card-content activator">
-            <p class="activator">Recipe time: {{recipe.recipe_time}} minutes</p>
+          </a>
+          <div id="card-content" class="card-content activator">
+          <a href="#card-content">
+            <p class="activator black-text">Recipe time: {{recipe.recipe_time}} minutes</p>
             <br class="activator" />
-            <p class="activator">Recipe cost: £{{recipe.recipe_cost}}</p>
+            <p class="activator black-text">Recipe cost: £{{recipe.recipe_cost}}</p>
             <br class="activator" />
             <br class="activator" />
             <p class="activator blue-text">Click for recipe description</p>
+            </a>
           </div>
           <div class="card-reveal">
             <span class="card-title grey-text text-darken-4"
@@ -43,9 +45,12 @@
           </div>
         </div>
       </div>
-    </a>
 
     {% endfor %}
   </div>
 </div>
+
+
+
+
 {% endblock %}
