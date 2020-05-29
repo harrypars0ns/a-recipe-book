@@ -32,7 +32,9 @@ nav .brand-logo {
   padding-left: 60px;
 }
 
-
+.lever {
+  margin-left: 10px;
+}
 
 .healthy-label {
   margin-left: 10px !important;
@@ -55,11 +57,10 @@ nav .brand-logo {
     color: black;
 }
 .card-reveal{
-    postition: relative;
+    position: relative;
 }
 p {
-    position: absolute;
-    bottom: 0;
+    position: absolute; 
 }
 .content-buttons{
     position: absolute;
@@ -80,10 +81,6 @@ p {
 
 .ingredient-input{
     /* opacity: 1; */
-}
-
-.lever {
-  margin-left: 10px;
 }
 
 
