@@ -1,23 +1,38 @@
 
-
 nav .brand-logo {
     font-size: 1.7rem;
     margin-left: 0px;
 }
-
-.cursive{
-    /* font-family: 'Balsamiq Sans', cursive; */
+.evolve {
+    text-align: center;
+    font-family: 'Exo 2', sans-serif;
 }
 
+.exo{
+    font-family: 'Exo 2', sans-serif;
 
+}
+.evolve img {
+    width: 70%;
+    display: inline-block;
+}
+
+.cursive {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 500;
+}
+
+.evolve h2{
+    margin: 0px 0px 60px 0px;
+    /* text-transform: uppercase; */
+
+}
 
 .weight {
   padding-left: 60px;
 }
 
-.lever {
-  margin-left: 10px;
-}
+
 
 .healthy-label {
   margin-left: 10px !important;
@@ -43,7 +58,7 @@ nav .brand-logo {
     postition: relative;
 }
 p {
-    position: absolute; */
+    position: absolute;
     bottom: 0;
 }
 .content-buttons{
@@ -60,16 +75,27 @@ p {
 
 /* ADD RECIPE */
 .caret {
-  height: 0px !important;
+  /* height: 0px !important; */
 }
 
-/* .amount{
-    padding-top: 25px !important;
-} */
+.ingredient-input{
+    /* opacity: 1; */
+}
+
+.lever {
+  margin-left: 10px;
+}
 
 
+/* MEDIA QUERIES */
 @media (min-width: 994px){
     nav .brand-logo {
     margin-left: 50px;
     }   
+}
+
+@media (max-width: 322px){
+    nav .brand-logo{
+        font-size: 1.6rem;
+    }
 }

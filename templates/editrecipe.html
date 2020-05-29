@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container">
-<h2 class="cursive">{{ page_title }}</h2>
+<h4 class="cursive">{{ page_title }}</h4>
   <div class="row">
     <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">
       <!-- RECIPE NAME -->
@@ -78,15 +78,15 @@
         </div>
         <div class="s1 m0 l0"></div>
         <div class="switch col s6">
-          <i class="material-icons prefix weight">favorite</i>
+          <i class="material-icons prefix weight">local_florist</i>
           <label class="healthy-label">
               {% if recipe.is_favorite %}
-            <input id="is_favorite" name="is_favorite" type="checkbox" checked />
+            <input id="is_vegetarian" name="is_vegetarian" type="checkbox" checked />
               {% else %}
              <input id="is_favorite" name="is_favorite" type="checkbox" />
              {% endif %}
             <span class="lever"></span>
-            Favorite!
+            Vegetarian!
           </label>
       </div>
       </div>

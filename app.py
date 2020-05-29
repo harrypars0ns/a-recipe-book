@@ -25,14 +25,26 @@ def playaround():
 def add_recipe():
     the_recipe = mongo.db.recipes.find()
     all_cuisines = mongo.db.cuisines.find()
-    return render_template('addrecipe.html', page_title="Add Recipe", recipe=the_recipe, cuisines=all_cuisines, ing=[])   
+    return render_template('addrecipe.html', page_title="Add Recipe", recipe=the_recipe, cuisines=all_cuisines)   
 
 
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
     recipes = mongo.db.recipes
-    recipes.insert_one(request.form.to_dict())
-    return redirect(url_for('get_recipes'))
+    input_data = request.form.to_dict()
+    recipe_ingredients = input_data["recipe_ingredients"].split("\n")
+    the_recipe = recipes.insert_one(
+        {
+         "recipe_name": input_data["recipe_name"],
+         "recipe_description": input_data["recipe_description"],
+         "recipe_cost": input_data["recipe_cost"],
+         "recipe_time": input_data["recipe_time"],
+         "is_healthy": input_data['is_healthy'],
+         "recipe_cuisine_image": input_data["recipe_cuisine_image"],
+         "ingredients": recipe_ingredients
+        }
+    )
+    return redirect(url_for('get_recipes', recipe_id=the_recipe.inserted_id))
 
 
 @app.route('/edit_recipe/<recipe_id>')

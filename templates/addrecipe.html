@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
-<div class="container">
-<h2 class="cursive">{{ page_title }}</h2>
+<div class="container evo">
+<h4 class="cursive">{{ page_title }}</h4>
     <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
       <!-- RECIPE NAME -->
       <div class="row">
@@ -35,7 +35,7 @@
             </p>
         </div>
       </div>
-    <div class="row">
+      <div class="row">
         <div class="col s11 m12">
             <i class="material-icons prefix">access_time</i>
             <label for="icon_prefix">Prep/Cook Time (Minutes)</label>
@@ -43,7 +43,7 @@
                 <input id="recipe_time" name="recipe_time" type="range" id="test5" min="0" max="90" value="{{recipe.recipe_time}}"/>
             </p>
         </div>
-    </div>
+      </div>
       <!-- IMAGE/CUISINE SELECT -->
       <div class="row">
         <div class="input-field col s11 m12">
@@ -54,7 +54,7 @@
                         <option value="{{cuisine.cuisine_image}}" data-icon="{{cuisine.cuisine_image}}">{{cuisine.cuisine_name}}</option>
                     {% endfor %}
             </select>
-          <label>Recipe Cuisine</label>
+            <label>Recipe Cuisine</label>
           </div>
       </div>
       
@@ -63,82 +63,42 @@
         <div class="switch col s6">
           <i class="material-icons prefix weight">fitness_center</i>
           <label class="healthy-label">
-                {% if recipe.is_healthy %}
-            <input id="is_healthy" name="is_healthy" type="checkbox" checked/>
-                {% else %}
             <input id="is_healthy" name="is_healthy" type="checkbox"/>
-                {% endif %}
             <span class="lever"></span>
             Healthy!
           </label>
         </div>
         <div class="s1 m0 l0"></div>
         <div class="switch col s6">
-          <i class="material-icons prefix weight">favorite</i>
+          <i class="material-icons prefix weight">local_florist</i>
           <label class="healthy-label">
-              {% if recipe.is_favorite %}
-            <input id="is_favorite" name="is_favorite" type="checkbox" checked />
-              {% else %}
              <input id="is_favorite" name="is_favorite" type="checkbox" />
-             {% endif %}
             <span class="lever"></span>
-            Favorite!
+            Vegetarian!
           </label>
-      </div>
-      </div>
-      <br>
-
-
-    
-
-
-
-      <div class="row">
-        <a href="#ingredients" class="waves-effect waves-light btn"><i class="material-icons left">arrow_downward</i>Continue</a>
-      </div>
-
-      <br>
-      
-
-      <div id="ingredients" class="ingredients">
-      <h4 class='underline' >Enter Ingredients</h4>
-      <br>
-        <div class="row">
-            <div class="input-field col s8 m3">
-                <i class="material-icons prefix">add</i>
-                <input id="ingredient_name_1" name="ingredient_name_1" type="text" value="{{recipe.ingredient_name_1}}" required/>
-                <label for="icon_prefix">(e.g Salt)</label>
-            </div>
-            <div class="input-field col s3 m3">
-                <input id="ingredient_measure_1" name="ingredient_measure_1" type="text" value="{{recipe.ingredient_measure_1}}" required/>
-                <label for="icon_prefix">(Tsp, Kg)</label>
-            </div>
-            <div class="col center s11 m6">
-            <p class="amount range-field">
-                <input id="ingredient_amount_1" name="ingredient_amount_1" type="range" id="test5" min="0" max="500" value="{{recipe.ingredient_amount_1}}"/>
-            </p>
-            </div>
-        </div>    
+        </div>
     </div>
-  
-    
-    
-
-
-
-
-
       <br>
-      <br>
-      <br>
-      <br>
-      <br>  
-      <div class="row">
-        <button class="btn waves-effect waves-light" type="submit" name="action">
-          Add Recipe<i class="material-icons right">playlist_add</i></button>
-      </div>
+    <div id="ingredients" class="ingredients row">
+        <h4 class='exo' >Ingredients</h4>
+        <h6 class="exo">Please enter each ingredient on a new line. (Press Enter after each ingredient)</h6>
+        <br>
+            <div class="input-field col s12">
+                <i class="material-icons prefix">subject</i>
+                <textarea name="recipe_ingredients" id="textarea2 recipe_ingredients" class="materialize-textarea ingredient-input" value="{{recipe.recipe_ingredients}}" data-length="120" placeholder="Please enter each ingredient on a new line"></textarea>
+          </div>
+    </div>  
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>  
+        <div class="row">
+            <button class="btn waves-effect waves-light" type="submit" name="action">
+            Add Recipe<i class="material-icons right">playlist_add</i></button>
+        </div>
     </form>
-  </div>
+</div>
 
 {% endblock %}
 
