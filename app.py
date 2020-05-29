@@ -39,7 +39,8 @@ def insert_recipe():
          "recipe_description": input_data["recipe_description"],
          "recipe_cost": input_data["recipe_cost"],
          "recipe_time": input_data["recipe_time"],
-         "is_healthy": input_data['is_healthy'],
+         'is_healthy':request.form.get('is_healthy'),
+         'is_vegetarian':request.form.get('is_vegetarian'),
          "recipe_cuisine_image": input_data["recipe_cuisine_image"],
          "ingredients": recipe_ingredients
         }
@@ -66,7 +67,7 @@ def update_recipe(recipe_id):
         'recipe_cost': request.form.get('recipe_cost'),
         'recipe_time':request.form.get('recipe_time'),
         'is_healthy':request.form.get('is_healthy'),
-        'is_favorite':request.form.get('is_favorite'),
+        'is_vegetarian':request.form.get('is_vegetarian'),
         'recipe_cuisine_image':request.form.get('recipe_cuisine_image')
 
 
