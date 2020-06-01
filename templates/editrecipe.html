@@ -1,55 +1,55 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container">
-<h4 class="cursive">{{ page_title }}</h4>
-  <div class="row">
-    <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">
-      <!-- RECIPE NAME -->
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">assignment</i>
-          <input id="recipe_name" name="recipe_name" type="text" value="{{recipe.recipe_name}}" required/>
-          <label for="icon_prefix">Recipe Name</label>
-        </div>
-      </div>
-      <!-- RECIPE DESCRIPTION -->
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">subject</i>
-          <input
+	<h4 class="cursive">{{ page_title }}</h4>
+	<div class="row">
+		<form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">
+			<!-- RECIPE NAME -->
+			<div class="row">
+				<div class="input-field col s12">
+					<i class="material-icons prefix">assignment</i>
+					<input id="recipe_name" name="recipe_name" type="text" value="{{recipe.recipe_name}}" required/>
+					<label for="icon_prefix">Recipe Name</label>
+				</div>
+			</div>
+			<!-- RECIPE DESCRIPTION -->
+			<div class="row">
+				<div class="input-field col s12">
+					<i class="material-icons prefix">subject</i>
+					<input
             name="recipe_description"
             id="recipe_description"
-            maxlength="60"
+            maxlength="185"
             type="text"
             value="{{recipe.recipe_description}}"
             required
           ></input>
-          <label for="icon_telephone">Recipe Description</label>
-        </div>
-      </div>
-      <!-- RECIPE COST -->
-      <div class="row">
-        <div class="col s10 m12">
-          <i class="material-icons prefix">attach_money</i>
-            <label for="icon_prefix">Recipe Cost</label>
-            <p class="range-field">
-            <input id="recipe_cost" name="recipe_cost" type="range" id="test5" min="0" max="90" value="{{recipe.recipe_cost}}"/>
+					<label for="icon_telephone">Recipe Description</label>
+				</div>
+			</div>
+			<!-- RECIPE COST -->
+			<div class="row">
+				<div class="col s10 m12">
+					<i class="material-icons prefix">attach_money</i>
+					<label for="icon_prefix">Recipe Cost</label>
+					<p class="range-field">
+						<input id="recipe_cost" name="recipe_cost" type="range" id="test5" min="0" max="90" value="{{recipe.recipe_cost}}"/>
             </p>
-        </div>
-      </div>
-    <div class="row">
-        <div class="col s10 m12">
-            <i class="material-icons prefix">access_time</i>
-            <label for="icon_prefix">Prep/Cook Time (Minutes)</label>
-            <p class="range-field">
-                <input id="recipe_time" name="recipe_time" type="range" id="test5" min="0" max="90" value="{{recipe.recipe_time}}"/>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s10 m12">
+					<i class="material-icons prefix">access_time</i>
+					<label for="icon_prefix">Prep/Cook Time (Minutes)</label>
+					<p class="range-field">
+						<input id="recipe_time" name="recipe_time" type="range" id="test5" min="0" max="90" value="{{recipe.recipe_time}}"/>
             </p>
-        </div>
-    </div>
-      <!-- IMAGE/CUISINE SELECT -->
-      <div class="row">
-        <div class="input-field col s11 m10">
-            <i class="material-icons prefix">camera_alt</i>
-            <select id="cuisine_image" name="recipe_cuisine_image" class="icons" required>
+				</div>
+			</div>
+			<!-- IMAGE/CUISINE SELECT -->
+			<div class="row">
+				<div class="input-field col s11 m10">
+					<i class="material-icons prefix">camera_alt</i>
+					<select id="cuisine_image" name="recipe_cuisine_image" class="icons" required>
               <option value="" disabled selected>Choose your image!</option>
                     {% for cuisine in cuisines %}
                         {% if cuisine.cuisine_image == recipe.recipe_cuisine_image %}
@@ -59,14 +59,14 @@
                         {% endif %}  
                     {% endfor %} 
             </select>
-          <label>Images in select</label>
-          </div>
-      </div>
-      <!-- Switches -->
-      <div class="row">
-        <div class="switch col s6">
-          <i class="material-icons prefix weight">fitness_center</i>
-          <label class="healthy-label">
+					<label>Images in select</label>
+				</div>
+			</div>
+			<!-- Switches -->
+			<div class="row">
+				<div class="switch col s6">
+					<i class="material-icons prefix weight">fitness_center</i>
+					<label class="healthy-label">
                 {% if recipe.is_healthy %}
             <input id="is_healthy" name="is_healthy" type="checkbox" checked/>
                 {% else %}
@@ -75,11 +75,11 @@
             <span class="lever"></span>
             Healthy!
           </label>
-        </div>
-        <div class="s1 m0 l0"></div>
-        <div class="switch col s6">
-          <i class="material-icons prefix weight">local_florist</i>
-          <label class="healthy-label">
+				</div>
+				<div class="s1 m0 l0"></div>
+				<div class="switch col s6">
+					<i class="material-icons prefix weight">local_florist</i>
+					<label class="healthy-label">
               {% if recipe.is_favorite %}
             <input id="is_vegetarian" name="is_vegetarian" type="checkbox" checked />
               {% else %}
@@ -88,11 +88,33 @@
             <span class="lever"></span>
             Vegetarian!
           </label>
-      </div>
-      </div>
-      <br>
-      <div class="row">
-        <button
+				</div>
+			</div>
+			<br>
+			<!-- Ingredients -->
+			<div id="ingredients" class="ingredients row">
+				<h4 class='exo'>Ingredients</h4>
+				<h6 class="exo">Please enter each ingredient on a new line. (Press Enter after each ingredient)</h6>
+				<br>
+				<div class="input-field col s12">
+					<i class="material-icons prefix">subject</i>
+					<textarea name="recipe_ingredients" id="textarea2 recipe_ingredients" class="materialize-textarea ingredient-input" value="{{recipe.recipe_ingredients}}" data-length="120" placeholder="Please enter each ingredient on a new line">{{ingredients}}</textarea>
+				</div>
+			</div>
+			<br>
+			<br>
+			<!-- Instructions -->
+			<div id="instructions" class="instructions row">
+				<h4 class='exo'>Instructions</h4>
+				<h6 class="exo">Please enter each instruction on a new line. (Press Enter after each step)</h6>
+				<br>
+				<div class="input-field col s12">
+					<i class="material-icons prefix">subject</i>
+					<textarea name="recipe_instructions" id="textarea2 recipe_ingredients" class="materialize-textarea ingredient-input" value="{{recipe.recipe_instructions}}" data-length="120" placeholder="Please enter each step on a new line">{{instructions}}</textarea>
+				</div>
+			</div>
+			<div class="row">
+				<button
           class="btn waves-effect waves-light"
           type="submit"
           name="action"
@@ -100,10 +122,9 @@
           Update Recipe
           <i class="material-icons right">playlist_add</i>
         </button>
-      </div>
-    </form>
-  </div>
+			</div>
+		</form>
+	</div>
 </div>
 
 {% endblock %}
-

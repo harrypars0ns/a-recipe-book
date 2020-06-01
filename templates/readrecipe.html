@@ -1,0 +1,64 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container">
+	<h4 class="cursive">{{ recipe.recipe_name }}</h4>
+	<br />
+
+	<div class="recipe_container s12">
+		<div class="recipe-subhead">
+			<h5 class="recipe-subhead">
+				<i class="material-icons">info_outline</i>Description
+			</h5>
+		</div>
+		<div class="ingredient">
+			<p class="recipe_container">{{ recipe.recipe_description }}</p>
+		</div>
+	</div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<div class="recipe_container">
+		<div class="recipe-subhead">
+			<h5 class="recipe-subhead">
+				<i class="material-icons">format_list_bulleted
+</i>Ingredients
+			</h5>
+		</div>
+		<div class="ingredient">
+			{% for ingredient in recipe.ingredients %}
+			<p>{{ ingredient }}</p>
+			<br>
+			<br>
+    {% endfor %}
+			<br>
+			<h5 class="recipe-subhead">
+				<i class="material-icons">format_list_numbered
+</i>Instructions
+			</h5>
+			<div class="ingredient">
+				{% for instruction in recipe.instructions %}
+				<p class="ingredient">{{ instruction }}</p>
+				<br>
+				<br>
+        {% endfor %}
+			</div>
+			</div>
+		</div>
+        <br>
+        <br>
+        <div class='read-recipe-buttons'>
+		<a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"
+			class="waves-effect waves-light light-green darken-1 btn-small">Edit</a>
+		<a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}"
+			class="waves-effect waves-light red darken-3 btn-small">Delete</a>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+	</div>
+</div>
+
+
+{% endblock %}

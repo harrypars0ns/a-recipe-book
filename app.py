@@ -15,10 +15,19 @@ def get_recipes():
     )
 
 
+@app.route("/read_recipe/<recipe_id>")
+def read_recipe(recipe_id):
+    the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("readrecipe.html", recipe=the_recipe,
+                           page_title="Read Recipe")
+
+# DELETE THIS
+
 @app.route('/playaround')
 def playaround():
 
     return render_template("playaround.html", page_title="Playaround", recipes=mongo.db.recipes.find(), cuisines=mongo.db.cuisines.find())
+    # 
 
 
 @app.route('/add_recipe')
@@ -33,6 +42,8 @@ def insert_recipe():
     recipes = mongo.db.recipes
     input_data = request.form.to_dict()
     recipe_ingredients = input_data["recipe_ingredients"].split("\n")
+    recipe_instructions = input_data["recipe_instructions"].split("\n")
+
     the_recipe = recipes.insert_one(
         {
          "recipe_name": input_data["recipe_name"],
@@ -42,7 +53,8 @@ def insert_recipe():
          'is_healthy':request.form.get('is_healthy'),
          'is_vegetarian':request.form.get('is_vegetarian'),
          "recipe_cuisine_image": input_data["recipe_cuisine_image"],
-         "ingredients": recipe_ingredients
+         "ingredients": recipe_ingredients,
+         "instructions": recipe_instructions
         }
     )
     return redirect(url_for('get_recipes', recipe_id=the_recipe.inserted_id))
@@ -52,7 +64,16 @@ def insert_recipe():
 def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     all_cuisines = mongo.db.cuisines.find()
-    return render_template('editrecipe.html', page_title="Edit Recipe", recipe=the_recipe, cuisines=all_cuisines)
+    recipe_instructions = [instruction for instruction
+                        in the_recipe['instructions']]
+    recipe_ingredients = [ingredient for ingredient
+                        in the_recipe['ingredients']]
+
+    list_of_instructions = "\n".join(recipe_instructions)            
+    list_of_ingredients = "\n".join(recipe_ingredients)
+
+
+    return render_template('editrecipe.html', page_title="Edit Recipe", recipe=the_recipe, cuisines=all_cuisines, ingredients=list_of_ingredients, instructions=list_of_instructions)
 
 
 

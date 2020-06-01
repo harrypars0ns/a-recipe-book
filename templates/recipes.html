@@ -12,8 +12,9 @@
       <div class="col s12 m6 l4">
         <div id="card-small" class="card small">
           <div class="card-image overlay">
-            <img class="landing-recipe-images" src="{{recipe.recipe_cuisine_image}}"/>
+            <a href="{{url_for('read_recipe', recipe_id=recipe._id)}}"><img class="landing-recipe-images" src="{{recipe.recipe_cuisine_image}}"/>
             <span class="card-title">{{recipe.recipe_name}}</span>
+            </a>
           </div>
         </a>
           <div id="card-content" class="card-content activator">
@@ -24,7 +25,7 @@
             <br class="activator" />
             <p class="activator blue-text">Click for recipe description</p>
           </div>
-          <div class="card-reveal">
+          <div class="card-reveal card-border">
             <span class="card-title grey-text text-darken-4"
               ><i class="material-icons right">close</i
               >{{recipe.recipe_name}}</span
@@ -35,12 +36,12 @@
             <div class="content-buttons">
               <a
                 href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"
-                class="waves-effect waves-light light-green darken-1 btn"
+                class="waves-effect waves-light light-green darken-1 btn-small"
                 >Edit</a
               >
               <a
                 href="{{url_for('delete_recipe', recipe_id=recipe._id)}}"
-                class="waves-effect waves-light red darken-3 btn"
+                class="waves-effect waves-light red darken-3 btn-small"
                 >Delete</a
               >
             </div>

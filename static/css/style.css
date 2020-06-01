@@ -1,35 +1,100 @@
-
 nav .brand-logo {
-    font-size: 1.7rem;
-    margin-left: 0px;
+  font-size: 1.7rem;
+  margin-left: 0px;
 }
 .evolve {
-    text-align: center;
-    font-family: 'Exo 2', sans-serif;
+  text-align: center;
+  font-family: "Exo 2", sans-serif;
 }
 
-.exo{
-    font-family: 'Exo 2', sans-serif;
-
+.exo {
+  font-family: "Exo 2", sans-serif;
 }
 .evolve img {
-    width: 70%;
-    display: inline-block;
+  width: 70%;
+  display: inline-block;
 }
 
 .cursive {
-    font-family: 'Exo 2', sans-serif;
-    font-weight: 500;
+  font-family: "Exo 2", sans-serif;
+  font-weight: 500;
 }
 
-.evolve h2{
-    margin: 0px 0px 60px 0px;
-    /* text-transform: uppercase; */
-
+.evolve h2 {
+  margin: 0px 0px 60px 0px;
+  /* text-transform: uppercase; */
 }
+
+
 
 .weight {
   padding-left: 60px;
+}
+
+.overlay {
+  background: black;
+}
+
+.landing-recipe-images {
+  opacity: 0.6;
+}
+
+.card-content {
+  position: relative;
+  color: black;
+}
+.card-reveal {
+  position: relative;
+}
+p {
+  position: absolute;
+}
+.content-buttons {
+  position: absolute;
+  bottom: 10px;
+}
+
+.card-title-reveal {
+  font-size: 20px;
+}
+
+/* READ RECIPE */
+
+.card-border {
+  border: 1px white solid;
+  height: 500px;
+  
+}
+
+.recipe_container {
+  width: 90%;
+}
+
+
+.recipe-subhead {
+  display: flex;
+  align-items: center;
+}
+
+.recipe-subhead i{
+  padding-right: 5px;
+}
+
+.ingredient p{
+    padding-left: 20px;
+}
+
+.read-recipe-buttons .btn-small{
+    margin-right: 10px;
+}
+
+/* ADD RECIPE */
+.caret {
+  /* height: 0px !important; */
+}
+
+.ingredient-input {
+  /* opacity: 1; */
 }
 
 .lever {
@@ -44,55 +109,19 @@ nav .brand-logo {
   margin-left: 43.5px;
 }
 
-.overlay {
-  background: black;
-}
-
-.landing-recipe-images {
-  opacity: 0.6;
-}
-
-.card-content {
-    position: relative;
-    color: black;
-}
-.card-reveal{
-    position: relative;
-}
-p {
-    position: absolute; 
-}
-.content-buttons{
-    position: absolute;
-    bottom: 10px;;
-}
-
-.card-title-reveal{
-    font-size: 20px;
-}
-
-
-
-
-/* ADD RECIPE */
-.caret {
-  /* height: 0px !important; */
-}
-
-.ingredient-input{
-    /* opacity: 1; */
-}
-
-
 /* MEDIA QUERIES */
-@media (min-width: 994px){
-    nav .brand-logo {
+@media (min-width: 994px) {
+  nav .brand-logo {
     margin-left: 50px;
-    }   
-}
-
-@media (max-width: 322px){
-    nav .brand-logo{
-        font-size: 1.6rem;
+  }
+  .recipe_container {
+  width: 70%;
     }
 }
+
+@media (max-width: 322px) {
+  nav .brand-logo {
+    font-size: 1.6rem;
+  }
+}
+
