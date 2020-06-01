@@ -64,16 +64,16 @@ def insert_recipe():
 def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     all_cuisines = mongo.db.cuisines.find()
-    recipe_instructions = [instruction for instruction
-                        in the_recipe['instructions']]
-    recipe_ingredients = [ingredient for ingredient
+    all_ingredients = [ingredient for ingredient
                         in the_recipe['ingredients']]
+    all_instructions = [instruction for instruction
+                         in the_recipe['instructions']]
 
-    list_of_instructions = "\n".join(recipe_instructions)            
-    list_of_ingredients = "\n".join(recipe_ingredients)
+    each_ingredient = "\n".join(all_ingredients)
+    each_instruction = "\n".join(all_instructions)
 
-
-    return render_template('editrecipe.html', page_title="Edit Recipe", recipe=the_recipe, cuisines=all_cuisines, ingredients=list_of_ingredients, instructions=list_of_instructions)
+    return render_template('editrecipe.html', page_title="Edit Recipe", recipe=the_recipe, cuisines=all_cuisines, ingredients=each_ingredient,
+                           instructions=each_instruction)
 
 
 
