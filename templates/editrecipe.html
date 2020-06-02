@@ -26,25 +26,21 @@
 					<label for="icon_telephone">Recipe Description</label>
 				</div>
 			</div>
-			<!-- RECIPE COST -->
-			<div class="row">
-				<div class="col s10 m12">
-					<i class="material-icons prefix">attach_money</i>
-					<label for="icon_prefix">Recipe Cost</label>
-					<p class="range-field">
-						<input id="recipe_cost" name="recipe_cost" type="range" id="test5" min="0" max="90" value="{{recipe.recipe_cost}}"/>
-            </p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col s10 m12">
-					<i class="material-icons prefix">access_time</i>
-					<label for="icon_prefix">Prep/Cook Time (Minutes)</label>
-					<p class="range-field">
-						<input id="recipe_time" name="recipe_time" type="range" id="test5" min="0" max="90" value="{{recipe.recipe_time}}"/>
-            </p>
-				</div>
-			</div>
+			<!-- RECIPE COST & TIME NO SLIDERS -->
+            <div class="row">
+                <div class="input-field col s5 m6">
+                    <i class="material-icons prefix">attach_money</i>
+                    <input id="cost_icon_prefix" name="recipe_cost" maxlength="185" type="text" value="{{recipe.recipe_cost}}" required
+                    ></input>
+                    <label for="cost_icon_prefix">Cost</label>
+                </div>     
+                    <div class="input-field col s6 m6">
+                    <i class="material-icons prefix">access_time</i>
+                    <input id="time_icon_prefix" name="recipe_time" maxlength="185" type="text" value="{{recipe.recipe_time}}" required
+                    ></input>
+                    <label for="time_icon_prefix">Time (mins)</label>
+                </div>
+            </div>
 			<!-- IMAGE/CUISINE SELECT -->
 			<div class="row">
 				<div class="input-field col s11 m10">
