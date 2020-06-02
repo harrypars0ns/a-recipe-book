@@ -4,46 +4,36 @@
 	<h4 class="cursive">{{ recipe.recipe_name }}</h4>
 	<br />
 
-	<div class="recipe_container s12">
+	<div class="recipe_container">
 		<div class="recipe-subhead">
 			<h5 class="recipe-subhead">
 				<i class="material-icons">info_outline</i>Description
 			</h5>
 		</div>
-		<div class="ingredient">
-			<p class="recipe_container">{{ recipe.recipe_description }}</p>
+		<div class="ingredient row">
+			<p class="recipe_container col s12">{{ recipe.recipe_description }}</p>
 		</div>
 	</div>
-	<br />
-	<br />
-	<br />
 	<br />
 	<div class="recipe_container">
 		<div class="recipe-subhead">
 			<h5 class="recipe-subhead">
 				<i class="material-icons">format_list_bulleted
-</i>Ingredients
+            </i>Ingredients
 			</h5>
 		</div>
 		<div class="ingredient">
-			{% for ingredient in recipe.ingredients %}
-			<p>{{ ingredient }}</p>
-			<br>
-			<br>
-    {% endfor %}
-			<br>
-			<h5 class="recipe-subhead">
-				<i class="material-icons">format_list_numbered
-</i>Instructions
-			</h5>
-			<div class="ingredient">
-				{% for instruction in recipe.instructions %}
-				<p class="ingredient">{{ instruction }}</p>
-				<br>
-				<br>
-        {% endfor %}
-			</div>
-			</div>
+            {% for ingredient in recipe.ingredients %}
+            <p>{{ ingredient }}</p>
+            {% endfor %}
+            <br>
+            <h5 class="recipe-subhead">
+                <i class="material-icons">format_list_numbered
+                </i>Instructions
+            </h5>
+                {% for instruction in recipe.instructions %}
+                    <p class="ingredient">{{ instruction }}</p>
+                {% endfor %}
 		</div>
         <br>
         <br>

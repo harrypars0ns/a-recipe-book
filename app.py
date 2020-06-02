@@ -8,6 +8,17 @@ app.config["MONGO_DBNAME"] = 'recipe_book'
 app.config["MONGO_URI"] = "mongodb+srv://root:r00tUser@myfirstcluster-mknew.mongodb.net/recipe_book?retryWrites=true&w=majority"
 mongo = PyMongo(app)
 
+
+def validate_form(form):
+    # define variables
+    max_char_name = 40
+    max_char_description = 185
+    max_char_cost = 7
+    max_char_time = 5
+    
+    
+
+
 @app.route('/')
 @app.route('/get_recipes')
 def get_recipes():

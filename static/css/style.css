@@ -22,10 +22,12 @@ nav .brand-logo {
 
 .evolve h2 {
   margin: 0px 0px 60px 0px;
-  /* text-transform: uppercase; */
 }
 
-
+.description p {
+  position: relative;
+  padding-right: 10px;
+}
 
 .weight {
   padding-left: 60px;
@@ -63,39 +65,31 @@ p {
 .card-border {
   border: 1px white solid;
   height: 500px;
-  
 }
 
 .recipe_container {
   width: 90%;
 }
 
-
 .recipe-subhead {
   display: flex;
   align-items: center;
 }
 
-.recipe-subhead i{
+.recipe-subhead i {
   padding-right: 5px;
 }
 
-.ingredient p{
-    padding-left: 20px;
+.ingredient p {
+  padding-left: 20px;
+  position: relative;
 }
 
-.read-recipe-buttons .btn-small{
-    margin-right: 10px;
+.read-recipe-buttons .btn-small {
+  margin-right: 10px;
 }
 
 /* ADD RECIPE */
-.caret {
-  /* height: 0px !important; */
-}
-
-.ingredient-input {
-  /* opacity: 1; */
-}
 
 .lever {
   margin-left: 10px;
@@ -114,9 +108,12 @@ p {
   nav .brand-logo {
     margin-left: 50px;
   }
+}
+
+@media (min-width: 1300px) {
   .recipe_container {
-  width: 70%;
-    }
+    width: 70%;
+  }
 }
 
 @media (max-width: 322px) {
@@ -124,4 +121,3 @@ p {
     font-size: 1.6rem;
   }
 }
-
