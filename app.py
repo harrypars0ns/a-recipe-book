@@ -15,6 +15,9 @@ def validate_form(form):
     max_char_description = 185
     max_char_cost = 7
     max_char_time = 5
+    error_list = []
+
+
     
     
 
@@ -114,6 +117,7 @@ def update_recipe(recipe_id):
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
+    recipes = mongo.db.recipes
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
 
