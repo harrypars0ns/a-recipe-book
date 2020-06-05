@@ -89,6 +89,15 @@ p {
   margin-right: 10px;
 }
 
+/* LANDING*/
+.about_heading{
+    margin-bottom: 20px;
+}
+.about p {
+    position: relative;
+    font-size: 16px;
+}
+
 /* ADD RECIPE */
 
 .lever {

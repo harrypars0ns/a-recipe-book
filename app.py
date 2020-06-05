@@ -23,6 +23,10 @@ def validate_form(form):
 
 
 @app.route('/')
+@app.route('/landing')
+def landing():
+    return render_template("landing.html", page_title="Primal Recipes")
+
 @app.route('/get_recipes')
 def get_recipes():
     return render_template("recipes.html", page_title="Recipes", recipes=mongo.db.recipes.find(), cuisines=mongo.db.cuisines.find()
@@ -117,7 +121,6 @@ def update_recipe(recipe_id):
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
-    recipes = mongo.db.recipes
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
 
