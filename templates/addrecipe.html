@@ -1,12 +1,15 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container">
 <h4 class="cursive">{{ page_title }}</h4>
+{% if errors %}
+<span>{{ errors }}</span>
+{% endif %}
     <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
       <!-- RECIPE NAME -->
       <div class="row">
         <div class="input-field col s11 m12">
           <i class="material-icons prefix">assignment</i>
-          <input id="icon_prefix" name="recipe_name" class="" type="text" value="{{recipe.recipe_name}}" required/>
+          <input id="icon_prefix" name="recipe_name" maxlength="50" class="" type="text" value="{{recipe_name}}"/>
           <label for="icon_prefix">Recipe Name</label>
         </div>
       </div>
@@ -14,7 +17,7 @@
       <div class="row">
         <div class="input-field col s11 m12">
           <i class="material-icons prefix">subject</i>
-          <input id="icon_prefix2" name="recipe_description" maxlength="185" type="text" value="{{recipe.recipe_description}}" required
+          <input id="icon_prefix2" name="recipe_description" maxlength="185" type="text" value="{{recipe_description}}"
           ></input>
           <label for="icon_prefix2">Recipe Description</label>
         </div>
@@ -23,36 +26,17 @@
       <div class="row">
         <div class="input-field col s5 m6">
           <i class="material-icons prefix">attach_money</i>
-          <input id="cost_icon_prefix" name="recipe_cost" maxlength="185" type="text" value="{{recipe.recipe_cost}}" required
+          <input id="cost_icon_prefix" name="recipe_cost" maxlength="185" type="text" value="{{recipe_cost}}"
           ></input>
           <label for="cost_icon_prefix">Cost</label>
         </div>     
         <div class="input-field col s6 m6">
           <i class="material-icons prefix">access_time</i>
-          <input id="time_icon_prefix" name="recipe_time" maxlength="185" type="text" value="{{recipe.recipe_time}}" required
+          <input id="time_icon_prefix" name="recipe_time" maxlength="185" type="text" value="{{recipe_time}}"
           ></input>
-          <label for="time_icon_prefix">Time (mins)</label>
+          <label for="time_icon_prefix">How Long?</label>
         </div>
       </div>
-      <!-- RECIPE COST -->
-      <!-- <div class="row">
-        <div class="col s11 m12">
-          <i class="material-icons prefix">attach_money</i>
-            <label for="icon_prefix">Recipe Cost</label>
-            <p class="range-field">
-            <input id="recipe_cost" name="recipe_cost" type="range" id="test5" min="0" max="90" value="{{recipe.recipe_cost}}"/>
-            </p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s11 m12">
-            <i class="material-icons prefix">access_time</i>
-            <label for="icon_prefix">Prep/Cook Time (Minutes)</label>
-            <p class="range-field">
-                <input id="recipe_time" name="recipe_time" type="range" id="test5" min="0" max="90" value="{{recipe.recipe_time}}"/>
-            </p>
-        </div>
-      </div> -->
       <!-- IMAGE/CUISINE SELECT -->
       <div class="row">
         <div class="input-field col s11 m12">
@@ -72,7 +56,7 @@
         <div class="switch col s6">
           <i class="material-icons prefix weight">fitness_center</i>
           <label class="healthy-label">
-            <input id="is_healthy" name="is_healthy" type="checkbox"/>
+            <input class="light-green darken1" id="is_healthy" name="is_healthy" type="checkbox"/>
             <span class="lever"></span>
             Healthy!
           </label>
@@ -94,7 +78,7 @@
         <br>
         <div class="input-field col s12">
             <i class="material-icons prefix">subject</i>
-            <textarea name="recipe_ingredients" id="textarea2 recipe_ingredients" class="materialize-textarea ingredient-input" value="{{recipe.recipe_ingredients}}" data-length="120" placeholder="Enter each ingredient on a new line"></textarea>
+            <textarea name="recipe_ingredients" id="textarea2 recipe_ingredients" class="materialize-textarea ingredient-input" value="{{recipe_ingredients}}" data-length="120" placeholder="Enter each ingredient on a new line"></textarea>
         </div>
     </div>  
         <br>
@@ -105,7 +89,7 @@
         <br>
         <div class="input-field col s12">
             <i class="material-icons prefix">subject</i>
-            <textarea name="recipe_instructions" id="textarea2 recipe_ingredients" class="materialize-textarea ingredient-input" value="{{recipe.recipe_instructions}}" data-length="120" placeholder="Enter each step on a new line"></textarea>
+            <textarea name="recipe_instructions" id="textarea2 recipe_ingredients" class="materialize-textarea ingredient-input" value="{{recipe_instructions}}" data-length="120" placeholder="Enter each step on a new line"></textarea>
         </div>
     </div>  
         <br>
@@ -114,7 +98,7 @@
         <br>
         <br>  
         <div class="row">
-            <button class="btn waves-effect waves-light" type="submit" name="action">
+            <button class="btn waves-effect light-green darken1 waves-light" type="submit" name="action">
             Add Recipe<i class="material-icons right">playlist_add</i></button>
         </div>
     </form>

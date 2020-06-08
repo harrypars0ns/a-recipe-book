@@ -1,13 +1,16 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container">
 	<h4 class="cursive">{{ page_title }}</h4>
+    {% if errors %}
+    <span>{{ errors }}</span>
+    {% endif %}
 	<div class="row">
 		<form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">
 			<!-- RECIPE NAME -->
 			<div class="row">
 				<div class="input-field col s12">
 					<i class="material-icons prefix">assignment</i>
-					<input id="recipe_name" name="recipe_name" type="text" value="{{recipe.recipe_name}}" required/>
+					<input id="recipe_name" name="recipe_name" type="text" value="{{recipe.recipe_name}}" />
 					<label for="icon_prefix">Recipe Name</label>
 				</div>
 			</div>
@@ -21,7 +24,7 @@
             maxlength="185"
             type="text"
             value="{{recipe.recipe_description}}"
-            required
+            
           ></input>
 					<label for="icon_telephone">Recipe Description</label>
 				</div>
@@ -111,7 +114,7 @@
 			</div>
 			<div class="row">
 				<button
-          class="btn waves-effect waves-light"
+          class="btn waves-effect light-green darken1 waves-light"
           type="submit"
           name="action"
         >

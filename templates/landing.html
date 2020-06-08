@@ -5,46 +5,58 @@
     <img src="static/images/evolve.png" />
     <h2>Primal Recipes</h2>
   </div>
-    <section class="about">
-        <h4 class="cursive about_heading">About Us</h4>
-        <p class="about_text">
-            Primal Recipes is your digital cookbook it has never been easier to find healthy, tasty recipes with ease. What's more, we use nothing but whole ingredients.
-        </p>
-        <p class="about_text">
-            This app is loaded with amazing recipes, so you'll never have to spend hours wondering what you are eating for dinner! 
-        </p>
-        <p class="about_text">
-            Our recipes are all made to fit to a Paleo diet. The paleo diet is designed to replicate food that our hunter-gatherer ancestors ate thousands of years ago.
-        </p>        
-        <p class="about_text">    
-            While losing weight is not a goal of the Paleo diet it is a common side effect of eating so healthily. 
-        </p>
-    </section>
-    <div class="landing_buttons">
-        <a href="{{ url_for('get_recipes') }}" id="download-button" class="btn-large waves-effect waves-light">Recipes</a>
-    </div>
-
-
-
-
-
-
+  <section class="about">
+    <h4 class="cursive about_heading">About Us</h4>
+    <p class="about_text">
+      Primal Recipes is your digital cookbook it has never been easier to find
+      healthy, tasty recipes with ease. What's more, we use nothing but whole
+      ingredients.
+    </p>
+    <p class="about_text">
+      This app is loaded with amazing recipes, so you'll never have to spend
+      hours wondering what you are eating for dinner!
+    </p>
+    <p class="about_text">
+      Our recipes are all made to fit to a Paleo diet. The paleo diet is
+      designed to replicate food that our hunter-gatherer ancestors ate
+      thousands of years ago.
+    </p>
+    <p class="about_text">
+      While losing weight is not a goal of the Paleo diet it is a common side
+      effect of eating so healthily.
+    </p>
+  </section>
+  <div class="landing_buttons_contain row">
+    <div class="button_spacer col s0 m1"></div>
+      <a
+        href="{{ url_for('get_recipes') }}"
+        id="download-button"
+        class="col s12 m4 btn-large waves-effect light-green hoverable darken1 waves-light valign-wrapper landing_buttons"
+        >Our Recipes</a
+      >
+    <div class="button_spacer col s0 m2"></div>
+      <a
+        href="{{ url_for('add_recipe') }}"
+        id="download-button"
+        class="col valign-wrapper s12 m4 btn-large landing_buttons waves-effect hoverable light-green darken1 waves-light"
+        >Add Recipe</a
+      >
+    <div class="button_spacer col s0 m1"></div>
+  </div>
 </div>
-<br>
-<br>
-<br>
-<br>
+<br />
+<br />
+<br />
+<br />
 
-
-
-  <script>
-    function confirmDelete(type, id) {
-      if (type == "recipe") {
-        if (confirm("Do you want to delete this " + type + " ?")) {
-          document.location.href = "/delete_recipe/" + id;
-        }
+<script>
+  function confirmDelete(type, id) {
+    if (type == "recipe") {
+      if (confirm("Do you want to delete this " + type + " ?")) {
+        document.location.href = "/delete_recipe/" + id;
       }
     }
-  </script>
+  }
+</script>
 
-  {% endblock %}
+{% endblock %}
