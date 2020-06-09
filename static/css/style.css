@@ -109,7 +109,7 @@ p {
 }
 
 
-/* ADD RECIPE */
+/* ADD/EDIT RECIPE */
 
 .lever {
   margin-left: 10px;
@@ -121,6 +121,16 @@ p {
 
 .range-field {
   margin-left: 43.5px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+#content-desktop {display: none;}
+#content-mobile {display: block;}
+
+}
 }
 
 /* MEDIA QUERIES */
@@ -144,4 +154,18 @@ p {
   nav .brand-logo {
     font-size: 1.6rem;
   }
+}
+
+
+@media (max-width: 500px) {
+    .icon-hide {
+    margin-left: 21px !important;
+    }
+    .icon-hide-max {
+    margin-left: 0px !important;
+    }
+    .select-wrapper {
+        margin-left: 21px !important;
+    }   
+
 }
