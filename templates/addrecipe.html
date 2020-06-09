@@ -24,11 +24,21 @@
       </div>
       <!-- RECIPE COST & TIME NO SLIDERS -->
       <div class="row">
-        <div class="input-field col s5 m6">
+        <!-- <div class="input-field col s5 m6">
           <i class="material-icons prefix">attach_money</i>
           <input id="cost_icon_prefix" name="recipe_cost" maxlength="185" type="text" value="{{recipe_cost}}"
           ></input>
           <label for="cost_icon_prefix">Cost</label>
+        </div> -->
+        <div class="input-field col s5 m6">
+            <i class="material-icons prefix">attach_money</i>
+            <select id="recipe_cost" name="recipe_cost" value="{{recipe_cost}}">
+                <option value="" disabled selected>Cost</option>
+                <option value="£">£</option>
+                <option value="£">££</option>
+                <option value="£">£££</option>
+            </select>
+            <label>Cost</label>
         </div>     
         <div class="input-field col s6 m6">
           <i class="material-icons prefix">access_time</i>

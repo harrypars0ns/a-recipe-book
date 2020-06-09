@@ -31,12 +31,22 @@
 			</div>
 			<!-- RECIPE COST & TIME NO SLIDERS -->
             <div class="row">
-                <div class="input-field col s5 m6">
+                <!-- <div class="input-field col s5 m6">
                     <i class="material-icons prefix">attach_money</i>
                     <input id="cost_icon_prefix" name="recipe_cost" maxlength="185" type="text" value="{{recipe.recipe_cost}}" required
                     ></input>
                     <label for="cost_icon_prefix">Cost</label>
-                </div>     
+                </div> -->
+                    <div class="input-field col s5 m6">
+                        <i class="material-icons prefix">attach_money</i>
+                        <select id="recipe_cost" name="recipe_cost" value="{{recipe_cost}}">
+                            <option value="{{recipe.recipe_cost}}" disabled selected>{{recipe.recipe_cost}}</option>
+                            <option value="£">£</option>
+                            <option value="££">££</option>
+                            <option value="£££">£££</option>
+                        </select>
+                        <label>Cost</label>
+                    </div>          
                     <div class="input-field col s6 m6">
                     <i class="material-icons prefix">access_time</i>
                     <input id="time_icon_prefix" name="recipe_time" maxlength="185" type="text" value="{{recipe.recipe_time}}" required
@@ -49,7 +59,7 @@
 				<div class="input-field col s11 m10">
 					<i class="material-icons prefix">camera_alt</i>
 					<select id="cuisine_image" name="recipe_cuisine_image" class="icons" required>
-              <option value="" disabled selected>Choose your image!</option>
+                    <option value="" disabled selected>Choose your image!</option>
                     {% for cuisine in cuisines %}
                         {% if cuisine.cuisine_image == recipe.recipe_cuisine_image %}
                             <option value="{{cuisine.cuisine_image}}" data-icon="{{cuisine.cuisine_image}}" selected >{{cuisine.cuisine_name}}</option>
