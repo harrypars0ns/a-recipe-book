@@ -16,7 +16,7 @@ def landing():
 
 @app.route('/get_recipes')
 def get_recipes():
-    return render_template("recipes.html", page_title="Recipes", recipes=mongo.db.recipes.find(), cuisines=mongo.db.cuisines.find()
+    return render_template("recipes.html", page_title="Primal Recipes", recipes=mongo.db.recipes.find(), cuisines=mongo.db.cuisines.find()
                            )
 
 
@@ -24,7 +24,7 @@ def get_recipes():
 def vegetarian():
     veggie_recipes = mongo.db.recipes.find({'is_vegetarian': "on"})
     all_cuisines = mongo.db.cuisines.find()
-    return render_template("recipes.html", page_title="Recipes", recipes=veggie_recipes, cuisines=all_cuisines
+    return render_template("recipes.html", page_title="Vegetarian Recipes", recipes=veggie_recipes, cuisines=all_cuisines
                            )
 
 
@@ -32,7 +32,7 @@ def vegetarian():
 def healthy():
     healthy_recipes = mongo.db.recipes.find({'is_healthy': "on"})
     all_cuisines = mongo.db.cuisines.find()
-    return render_template("recipes.html", page_title="Recipes", recipes=healthy_recipes, cuisines=all_cuisines
+    return render_template("recipes.html", page_title="Healthy Recipes", recipes=healthy_recipes, cuisines=all_cuisines
                            )
 
 

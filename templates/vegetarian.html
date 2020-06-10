@@ -1,11 +1,10 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container">
    <div class="evolve">
-      <img src="static/images/evolve.png" alt="Primal Recipes">
-      <h2>Veggie Recipes</h2>
+      <img src="static/images/evolve.png" alt="Vegetarian Recipes">
+      <h2>Vegetarian Recipes</h2>
    </div>
    <div class="row">
-      <!-- <h4 class="cursive">{{ page_title }}</h4> -->
       {% for recipe in recipes %}
       <a href="#">
          <div class="col s12 m6 l4">

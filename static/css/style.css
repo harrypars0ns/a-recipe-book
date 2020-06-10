@@ -1,163 +1,165 @@
+/* BASE HTML */
+
 nav .brand-logo {
-  font-size: 1.7rem;
-  margin-left: 50px;
+	font-size: 1.7rem;
+	margin-left: 50px;
 }
+
+
+/* RECIPES, CARDS AND LOGO */
+
 .evolve {
-  text-align: center;
-  font-family: "Exo 2", sans-serif;
+	text-align: center;
+	font-family: "Exo 2", sans-serif;
 }
 
 .exo {
-  font-family: "Exo 2", sans-serif;
+	font-family: "Exo 2", sans-serif;
 }
+
 .evolve img {
-  width: 70%;
-  display: inline-block;
+	width: 70%;
+	display: inline-block;
 }
 
 .cursive {
-  font-family: "Exo 2", sans-serif;
-  font-weight: 500;
+	font-family: "Exo 2", sans-serif;
+	font-weight: 500;
 }
 
 .evolve h2 {
-  margin: 0px 0px 60px 0px;
-}
-
-.description p {
-  position: relative;
-  padding-right: 10px;
-}
-
-.weight {
-  padding-left: 60px;
+	margin: 0px 0px 60px 0px;
 }
 
 .overlay {
-  background: black;
+	background: black;
 }
 
 .landing-recipe-images {
-  opacity: 0.6;
+	opacity: 0.6;
 }
 
 .card-content {
-  position: relative;
-  color: black;
-}
-.card-reveal {
-  position: relative;
-}
-p {
-  position: absolute;
-}
-.content-buttons {
-  position: absolute;
-  bottom: 10px;
+	position: relative;
+	color: black;
 }
 
-.card-title-reveal {
-  font-size: 20px;
+.card-reveal {
+	position: relative;
 }
+
+p {
+	position: absolute;
+}
+
 
 /* READ RECIPE */
 
 .card-border {
-  border: 1px white solid;
-  height: 500px;
+	border: 1px white solid;
+	height: 500px;
 }
 
 .recipe_container {
-  width: 90%;
+	width: 90%;
 }
 
 .recipe-subhead {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .recipe-subhead i {
-  padding-right: 5px;
+	padding-right: 5px;
 }
 
 .ingredient p {
-  padding-left: 20px;
-  position: relative;
+	padding-left: 20px;
+	position: relative;
 }
 
 .read-recipe-buttons .btn-small {
-  margin-right: 10px;
+	margin-right: 10px;
 }
 
+
 /* LANDING*/
+
 .about_heading {
-  margin-bottom: 20px;
+	margin-bottom: 20px;
 }
+
 .about p {
-  position: relative;
-  font-size: 16px;
+	position: relative;
+	font-size: 16px;
 }
 
 .landing_buttons_contain {
-  text-align: center;
-  margin-top: 30px;
+	text-align: center;
+	margin-top: 30px;
 }
 
 .landing_buttons {
-  display: inline-block;
-  margin-bottom: 20px;
+	display: inline-block;
+	margin-bottom: 20px;
 }
+
 
 /* ADD/EDIT RECIPE */
 
 .lever {
-  margin-left: 10px;
+	margin-left: 10px;
 }
 
 .healthy-label {
-  margin-left: 10px !important;
+	margin-left: 10px !important;
+}
+
+.weight {
+	padding-left: 60px;
 }
 
 .range-field {
-  margin-left: 43.5px;
+	margin-left: 43.5px;
 }
 
 .errorbox {
-  background: rgba(245, 5, 5, 0.5);
-  padding: 10px;
-  border-radius: 5px;
+	background: rgba(245, 5, 5, 0.5);
+	padding: 10px;
+	border-radius: 5px;
 }
+
 
 /* MEDIA QUERIES */
 
 @media (min-width: 1300px) {
-  .recipe_container {
-    width: 70%;
-  }
+	.recipe_container {
+		width: 70%;
+	}
 }
 
 @media (max-width: 322px) {
-  nav .brand-logo {
-    font-size: 1.6rem;
-    margin-left: 0px;
-  }
+	nav .brand-logo {
+		font-size: 1.6rem;
+		margin-left: 0px;
+	}
 }
 
 @media (max-width: 500px) {
-  .icon-hide {
-    margin-left: 21px !important;
-  }
-  .icon-hide-max {
-    margin-left: 0px !important;
-  }
-  .select-wrapper {
-    margin-left: 21px !important;
-  }
+	.icon-hide {
+		margin-left: 21px !important;
+	}
+	.icon-hide-max {
+		margin-left: 0px !important;
+	}
+	.select-wrapper {
+		margin-left: 21px !important;
+	}
 }
 
 @media (max-width: 994px) {
-  nav .brand-logo {
-    font-size: 1.5rem;
-    margin-left: 0px;
-  }
+	nav .brand-logo {
+		font-size: 1.5rem;
+		margin-left: 0px;
+	}
 }

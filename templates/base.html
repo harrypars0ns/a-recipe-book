@@ -23,19 +23,19 @@
             <a href="{{url_for('get_recipes')}}" id="brand-logos" class="brand-logo cursive">Primal Recipes</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-               <li><a href="{{url_for('get_recipes')}}">All Recipes</a></li>
                <li><a href="{{url_for('add_recipe')}}">Add Custom Recipe</a></li>
-               <li><a href="{{url_for('healthy')}}">Healthy Options</a></li>
-               <li><a href="{{url_for('vegetarian')}}">Veggie Options</a></li>
+               <li><a href="{{url_for('get_recipes')}}">All Recipes</a></li>
+               <li><a href="{{url_for('healthy')}}">Healthy Recipes</a></li>
+               <li><a href="{{url_for('vegetarian')}}">Veggie Recipes</a></li>
                <li><a href="{{url_for('landing')}}">About Us</a></li>
             </ul>
          </div>
       </nav>
       <ul class="sidenav" id="mobile-demo">
-         <li><a href="{{url_for('get_recipes')}}">All Recipes</a></li>
          <li><a href="{{url_for('add_recipe')}}">Add Custom Recipes</a></li>
-         <li><a href="{{url_for('healthy')}}">Healthy Options</a></li>
-         <li><a href="{{url_for('vegetarian')}}">Veggie Options</a></li>
+         <li><a href="{{url_for('get_recipes')}}">All Recipes</a></li>
+         <li><a href="{{url_for('healthy')}}">Healthy Recipes</a></li>
+         <li><a href="{{url_for('vegetarian')}}">Veggie Recipes</a></li>
          <li><a href="{{url_for('landing')}}">About Us</a></li>
       </ul>
       {% block content %} {% endblock %}
