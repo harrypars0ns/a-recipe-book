@@ -9,13 +9,6 @@ app.config["MONGO_URI"] = "mongodb+srv://root:r00tUser@myfirstcluster-mknew.mong
 mongo = PyMongo(app)
 
 
-def validate_form(form):
-    # define variables
-    max_char_name = 40
-    max_char_description = 185
-    error_list = []
-
-
 @app.route('/')
 def landing():
     return render_template("landing.html", page_title="Primal Recipes")
@@ -29,13 +22,17 @@ def get_recipes():
 
 @app.route('/vegetarian')
 def vegetarian():
-    return render_template("recipes.html", page_title="Recipes", recipes=mongo.db.recipes.find({'is_vegetarian': "on"}), cuisines=mongo.db.cuisines.find()
+    veggie_recipes = mongo.db.recipes.find({'is_vegetarian': "on"})
+    all_cuisines = mongo.db.cuisines.find()
+    return render_template("recipes.html", page_title="Recipes", recipes=veggie_recipes, cuisines=all_cuisines
                            )
 
 
 @app.route('/healthy')
 def healthy():
-    return render_template("recipes.html", page_title="Recipes", recipes=mongo.db.recipes.find({'is_healthy': "on"}), cuisines=mongo.db.cuisines.find()
+    healthy_recipes = mongo.db.recipes.find({'is_healthy': "on"})
+    all_cuisines = mongo.db.cuisines.find()
+    return render_template("recipes.html", page_title="Recipes", recipes=healthy_recipes, cuisines=all_cuisines
                            )
 
 
@@ -44,13 +41,6 @@ def read_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("readrecipe.html", recipe=the_recipe,
                            page_title="Read Recipe")
-
-
-@app.route('/playaround')
-def playaround():
-
-    return render_template("playaround.html", page_title="Playaround", recipes=mongo.db.recipes.find(), cuisines=mongo.db.cuisines.find())
-    #
 
 
 @app.route('/add_recipe')
@@ -99,7 +89,7 @@ def insert_recipe():
     # If no errors on validation, display error message.
     if len(validation_errors) > 0:
         print("errors entered")
-        error_string = '\n'.join(validation_errors)
+        error_string = "\n".join(validation_errors)
         return render_template('addrecipe.html', page_title="Add Recipe", errors=error_string, recipe=the_recipe, cuisines=all_cuisines)
 
     the_recipe = recipes.insert_one(
@@ -115,7 +105,7 @@ def insert_recipe():
             "instructions": recipe_instructions
         }
     )
-    return redirect(url_for('get_recipes', recipe_id=the_recipe.inserted_id))
+    return redirect(url_for('read_recipe', recipe_id=the_recipe.inserted_id))
 
 
 @app.route('/edit_recipe/<recipe_id>')

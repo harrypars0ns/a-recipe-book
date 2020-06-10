@@ -2,7 +2,9 @@
 <div class="container">
 <h4 class="cursive">{{ page_title }}</h4>
 {% if errors %}
-<span>{{ errors }}</span>
+    <div class="errorbox">
+            <span>{{ errors }}</span>
+    </div>
 {% endif %}
     <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
       <!-- RECIPE NAME -->

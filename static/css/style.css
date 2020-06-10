@@ -1,6 +1,6 @@
 nav .brand-logo {
   font-size: 1.7rem;
-  margin-left: 0px;
+  margin-left: 50px;
 }
 .evolve {
   text-align: center;
@@ -123,7 +123,11 @@ p {
   margin-left: 43.5px;
 }
 
-
+.errorbox {
+    background: rgba(245, 5, 5, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+}
 
 @media screen and (max-width: 768px) {
 
@@ -134,25 +138,22 @@ p {
 }
 
 /* MEDIA QUERIES */
+
 @media (min-width: 994px) {
-  nav .brand-logo {
-    margin-left: 50px;
-  }
-  .landing_buttons_contain{
-    text-align: center;
-    margin-top: 70px;
+  
 }
-}
+
 
 @media (min-width: 1300px) {
   .recipe_container {
-    width: 70%;
+    width: 20%;
   }
 }
 
 @media (max-width: 322px) {
   nav .brand-logo {
     font-size: 1.6rem;
+    margin-left: 0px;
   }
 }
 
@@ -166,6 +167,13 @@ p {
     }
     .select-wrapper {
         margin-left: 21px !important;
-    }   
+    }
+    
+}
 
+@media (max-width: 994px) {
+    nav .brand-logo {
+    font-size: 1.5rem;
+    margin-left: 0px;
+  }
 }
