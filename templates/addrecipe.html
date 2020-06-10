@@ -20,7 +20,7 @@
         <div class="input-field col s11 m12">
           <i class="material-icons prefix hide-on-small-only">subject</i>
           <input class="icon-hide" id="icon_prefix2" name="recipe_description" maxlength="185" type="text" value="{{recipe_description}}"
-          ></input>
+          >
           <label class="icon-hide" for="icon_prefix2">Recipe Description</label>
         </div>
       </div>
@@ -34,18 +34,18 @@
         </div> -->
         <div class="input-field col s5 m6">
             <i class="material-icons prefix hide-on-small-only">attach_money</i>
-            <select class="icon-hide" id="recipe_cost" name="recipe_cost" value="{{recipe_cost}}">
-                <option value="" disabled selected>Cost</option>
+            <select class="icon-hide" id="recipe_cost" name="recipe_cost">
+                <option value="£" selected>Cost</option>
                 <option value="£">£</option>
-                <option value="£">££</option>
-                <option value="£">£££</option>
+                <option value="££">££</option>
+                <option value="£££">£££</option>
             </select>
             <label class="icon-hide" >Cost</label>
         </div>     
         <div class="input-field col s6 m6">
           <i class="material-icons prefix hide-on-small-only">access_time</i>
           <input class="icon-hide-max" id="time_icon_prefix" name="recipe_time" maxlength="12" type="text" value="{{recipe_time}}"
-          ></input>
+          >
           <label class="icon-hide-max" for="time_icon_prefix">How Long?</label>
         </div>
       </div>
@@ -67,7 +67,7 @@
         <div class="switch col s6">
           <i class="material-icons prefix weight hide-on-small-only">fitness_center</i>
           <label class="icon-hide-max healthy-label">
-            <input class="icon-hide-max" class="light-green darken1" id="is_healthy" name="is_healthy" type="checkbox"/>
+            <input class="icon-hide-max" id="is_healthy" name="is_healthy" type="checkbox"/>
             <span class="lever"></span>
             Healthy!
           </label>
@@ -76,7 +76,7 @@
         <div class="switch col s6">
           <i class="material-icons prefix weight hide-on-small-only">local_florist</i>
           <label class="icon-hide-max healthy-label">
-             <input class="icon-hide-max" id="is_vegetarian" name="is_vegetarian" type="checkbox" false/>
+             <input class="icon-hide-max" id="is_vegetarian" name="is_vegetarian" type="checkbox"/>
             <span class="lever"></span>
             Veggie!
           </label>
@@ -89,7 +89,7 @@
         <br>
         <div class="input-field col s12">
             <i class="material-icons prefix hide-on-small-only">subject</i>
-            <textarea name="recipe_ingredients" id="textarea2 recipe_ingredients" class="materialize-textarea icon-hide ingredient-input" value="{{recipe_ingredients}}" data-length="120" placeholder="Enter each item on a new line"></textarea>
+            <textarea name="recipe_ingredients" id="textarea2" class="materialize-textarea icon-hide ingredient-input" data-length="120" placeholder="Enter each item on a new line"></textarea>
         </div>
     </div>  
         <br>
@@ -99,7 +99,7 @@
         <br>
         <div class="input-field col s12">
             <i class="material-icons prefix hide-on-small-only">subject</i>
-            <textarea name="recipe_instructions" id="textarea2 recipe_ingredients" class="materialize-textarea icon-hide ingredient-input" value="{{recipe_instructions}}" data-length="120" placeholder="Enter each step on a new line"></textarea>
+            <textarea name="recipe_instructions" id="textarea3" class="materialize-textarea icon-hide ingredient-input" data-length="120" placeholder="Enter each step on a new line"></textarea>
         </div>
     </div>   
         <div class="row">

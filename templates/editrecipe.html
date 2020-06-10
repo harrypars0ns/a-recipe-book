@@ -10,7 +10,7 @@
 			<div class="row">
 				<div class="input-field col s12 input-fields">
 					<i class="material-icons prefix	hide-on-small-only">assignment</i>
-					<input class="icon-hide" id="icon_prefix" name="recipe_name" type="text" maxlength="50" value="{{recipe.recipe_name}}" />
+					<input class="icon-hide" id="icon_prefix" name="recipe_name" type="text" maxlength="50" value="{{recipe.recipe_name}}"/>
 					<label class="icon-hide" for="icon_prefix">Recipe Name</label>
 				</div>
 			</div>
@@ -18,22 +18,16 @@
 			<div class="row">
 				<div class="input-field col s12 input-fields">
 					<i class="material-icons prefix hide-on-small-only">subject</i>
-					<input class="icon-hide" name="recipe_description" id="icon_prefix2" maxlength="185" type="text" value="{{recipe.recipe_description}}"></input>
+					<input class="icon-hide" name="recipe_description" id="icon_prefix2" maxlength="185" type="text" value="{{recipe.recipe_description}}">
 					<label class="icon-hide" for="icon_prefix2">Recipe Description</label>
 				</div>
 			</div>
 			<!-- RECIPE COST & TIME NO SLIDERS -->
             <div class="row">
-                <!-- <div class="input-field col s5 m6">
-                    <i class="material-icons prefix">attach_money</i>
-                    <input id="cost_icon_prefix" name="recipe_cost" maxlength="185" type="text" value="{{recipe.recipe_cost}}" required
-                    ></input>
-                    <label for="cost_icon_prefix">Cost</label>
-                </div> -->
                     <div class="input-field col s5 m6">
                         <i class="material-icons prefix hide-on-small-only">attach_money</i>
-                        <select class="icon-hide" id="recipe_cost" name="recipe_cost" value="{{recipe_cost}}">
-                            <option value="{{recipe.recipe_cost}}" disabled selected>{{recipe.recipe_cost}}</option>
+                        <select class="icon-hide" id="recipe_cost" name="recipe_cost" required>
+                            <option value="{{recipe.recipe_cost}}" selected>{{recipe.recipe_cost}}</option>
                             <option value="£">£</option>
                             <option value="££">££</option>
                             <option value="£££">£££</option>
@@ -43,7 +37,7 @@
                     <div class="input-field col s7 m6">
                     <i class="material-icons prefix hide-on-small-only">access_time</i>
                     <input class="icon-hide-max" id="time_icon_prefix" name="recipe_time" maxlength="185" type="text" value="{{recipe.recipe_time}}" required
-                    ></input>
+                    >
                     <label class="icon-hide-max" for="time_icon_prefix">How Long?</label>
                 </div>
             </div>
@@ -52,7 +46,7 @@
 				<div class="input-field col s12 m10">
 					<i class="material-icons prefix hide-on-small-only">camera_alt</i>
 					<select id="cuisine_image" name="recipe_cuisine_image" class="icons icon-hide" required>
-                    <option value="" disabled selected>Choose your image!</option>
+                    <option value="" disabled>Choose your image!</option>
                     {% for cuisine in cuisines %}
                         {% if cuisine.cuisine_image == recipe.recipe_cuisine_image %}
                             <option value="{{cuisine.cuisine_image}}" data-icon="{{cuisine.cuisine_image}}" selected >{{cuisine.cuisine_name}}</option>
@@ -100,7 +94,7 @@
             <br>
             <div class="input-field col s12">
                 <i class="material-icons prefix hide-on-small-only">subject</i>
-                <textarea name="ingredients" id="textarea2 ingredients" class="materialize-textarea icon-hide ingredient-input" value="{{ingredients}}" data-length="120" placeholder="Please enter each item on a new line">{{ingredients}}</textarea>
+                <textarea name="ingredients" id="textarea2" class="materialize-textarea icon-hide ingredient-input" data-length="120" placeholder="Please enter each item on a new line">{{ingredients}}</textarea>
             </div>
             </div>
 			<br>
@@ -111,7 +105,7 @@
 				<br>
 				<div class="input-field col s12">
 					<i class="material-icons prefix hide-on-small-only">subject</i>
-					<textarea name="instructions" id="textarea2 recipe_ingredients" class="materialize-textarea icon-hide ingredient-input" value="{{recipe.recipe_instructions}}" data-length="120" placeholder="Please enter each step on a new line">{{instructions}}</textarea>
+					<textarea name="instructions" id="textarea3" class="materialize-textarea icon-hide ingredient-input" data-length="120" placeholder="Please enter each step on a new line">{{instructions}}</textarea>
 				</div>
 			</div>
 			<div class="row">

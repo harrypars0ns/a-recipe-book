@@ -2,19 +2,20 @@
 
 <div class="container">
     <div class="evolve">
-        <img src="static/images/evolve.png">
+        <img src="static/images/evolve.png" alt="Primal Recipes">
         <h2>Primal Recipes</h2>
     </div>
   <div class="row">
-    <!-- <h4 class="cursive">{{ page_title }}</h4> -->
     {% for recipe in recipes %}
       <div class="col s12 m6 l4">
-        <div id="card-small" class="card small">
+        <div class="card small">
           <div class="card-image overlay">
-            <a href="{{url_for('read_recipe', recipe_id=recipe._id)}}"><img class="landing-recipe-images" src="{{recipe.recipe_cuisine_image}}"/>
+            <a href="{{url_for('read_recipe', recipe_id=recipe._id)}}"><img class="landing-recipe-images" src="{{recipe.recipe_cuisine_image}}" alt="Recipe Image"/>
             <span class="card-title">{{recipe.recipe_name}}</span>
+            </a>
           </div>
-          <div id="card-content" class="card-content activator">
+          <a href="{{url_for('read_recipe', recipe_id=recipe._id)}}">
+          <div class="card-content activator">
             <p class="activator black-text">Recipe time: {{recipe.recipe_time}}</p>
             <br class="activator" />
             <p class="activator black-text">Recipe cost: {{recipe.recipe_cost}}</p>
