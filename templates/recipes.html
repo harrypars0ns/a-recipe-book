@@ -1,45 +1,41 @@
 {% extends 'base.html' %} {% block content %}
-
 <div class="container">
-    <div class="evolve">
-        <img src="static/images/evolve.png" alt="Primal Recipes">
-        <h2>Primal Recipes</h2>
-    </div>
-  <div class="row">
-    {% for recipe in recipes %}
+   <div class="evolve">
+      <img src="static/images/evolve.png" alt="Primal Recipes">
+      <h2>Primal Recipes</h2>
+   </div>
+   <div class="row">
+      {% for recipe in recipes %}
       <div class="col s12 m6 l4">
-        <div class="card small">
-          <div class="card-image overlay">
-            <a href="{{url_for('read_recipe', recipe_id=recipe._id)}}"><img class="landing-recipe-images" src="{{recipe.recipe_cuisine_image}}" alt="Recipe Image"/>
-            <span class="card-title">{{recipe.recipe_name}}</span>
+         <div class="card small">
+            <div class="card-image overlay">
+               <a href="{{url_for('read_recipe', recipe_id=recipe._id)}}"><img class="landing-recipe-images" src="{{recipe.recipe_cuisine_image}}" alt="Recipe Image"/>
+               <span class="card-title">{{recipe.recipe_name}}</span>
+               </a>
+            </div>
+            <a href="{{url_for('read_recipe', recipe_id=recipe._id)}}">
+               <div class="card-content activator">
+                  <p class="activator black-text">Recipe time: {{recipe.recipe_time}}</p>
+                  <br class="activator" />
+                  <p class="activator black-text">Recipe cost: {{recipe.recipe_cost}}</p>
+                  <br class="activator" />
+                  <br class="activator" />
+                  <p class="activator blue-text">Click for recipe description</p>
+               </div>
             </a>
-          </div>
-          <a href="{{url_for('read_recipe', recipe_id=recipe._id)}}">
-          <div class="card-content activator">
-            <p class="activator black-text">Recipe time: {{recipe.recipe_time}}</p>
-            <br class="activator" />
-            <p class="activator black-text">Recipe cost: {{recipe.recipe_cost}}</p>
-            <br class="activator" />
-            <br class="activator" />
-            <p class="activator blue-text">Click for recipe description</p>
-          </div>
-           </a>
-        </div>
+         </div>
       </div>
-
-    {% endfor %}
-  </div>
+      {% endfor %}
+   </div>
 </div>
-
 <!-- Javascript function, confirm delete -->
 <script>
-    function confirmDelete(type, id) {
-    if (type == 'recipe') {
-        if (confirm("Do you want to delete this " + type + " ?")) {
-            document.location.href = '/delete_recipe/' + id;
-        }
-    }
-}
+   function confirmDelete(type, id) {
+   if (type == 'recipe') {
+       if (confirm("Do you want to delete this " + type + " ?")) {
+           document.location.href = '/delete_recipe/' + id;
+       }
+   }
+   }
 </script>
-
 {% endblock %}

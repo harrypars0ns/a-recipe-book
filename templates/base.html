@@ -1,58 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Primal Recipes</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link
-      rel="stylesheet"
-      href="{{url_for('static', filename='css/style.css')}}"
-      type="text/css"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500;600&display=swap" rel="stylesheet">
-  </head>
-
-  <body>
-<nav>
-    <div class="nav-wrapper light-green darken1">
-      <a href="{{url_for('get_recipes')}}" id="brand-logos" class="brand-logo cursive">Primal Recipes</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="{{url_for('get_recipes')}}">All Recipes</a></li>
-        <li><a href="{{url_for('add_recipe')}}">Add Custom Recipe</a></li>
-        <li><a href="{{url_for('healthy')}}">Healthy Options</a></li>
-        <li><a href="{{url_for('vegetarian')}}">Veggie Options</a></li>
-        <li><a href="{{url_for('landing')}}">About Us</a></li>
-
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <title>Primal Recipes</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <link
+         rel="stylesheet"
+         href="{{url_for('static', filename='css/style.css')}}"
+         type="text/css"
+         />
+      <link
+         href="https://fonts.googleapis.com/icon?family=Material+Icons"
+         rel="stylesheet"
+         />
+      <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500;600&display=swap" rel="stylesheet">
+   </head>
+   <body>
+      <nav>
+         <div class="nav-wrapper light-green darken1">
+            <a href="{{url_for('get_recipes')}}" id="brand-logos" class="brand-logo cursive">Primal Recipes</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+               <li><a href="{{url_for('get_recipes')}}">All Recipes</a></li>
+               <li><a href="{{url_for('add_recipe')}}">Add Custom Recipe</a></li>
+               <li><a href="{{url_for('healthy')}}">Healthy Options</a></li>
+               <li><a href="{{url_for('vegetarian')}}">Veggie Options</a></li>
+               <li><a href="{{url_for('landing')}}">About Us</a></li>
+            </ul>
+         </div>
+      </nav>
+      <ul class="sidenav" id="mobile-demo">
+         <li><a href="{{url_for('get_recipes')}}">All Recipes</a></li>
+         <li><a href="{{url_for('add_recipe')}}">Add Custom Recipes</a></li>
+         <li><a href="{{url_for('healthy')}}">Healthy Options</a></li>
+         <li><a href="{{url_for('vegetarian')}}">Veggie Options</a></li>
+         <li><a href="{{url_for('landing')}}">About Us</a></li>
       </ul>
-    </div>
-</nav>
-
-  <ul class="sidenav" id="mobile-demo">
-    <li><a href="{{url_for('get_recipes')}}">All Recipes</a></li>
-    <li><a href="{{url_for('add_recipe')}}">Add Custom Recipes</a></li>
-    <li><a href="{{url_for('healthy')}}">Healthy Options</a></li>
-    <li><a href="{{url_for('vegetarian')}}">Veggie Options</a></li>
-    <li><a href="{{url_for('landing')}}">About Us</a></li>
-  </ul>
       {% block content %} {% endblock %}
-    <script src="/static/js/script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- <script src="static/js/script.js"></script> -->
-    <script>
-    
-      $(document).ready(function () {
-        $("select").formSelect();
-        // $("select").material_select();
-        $('.sidenav').sidenav();
-      });
-    </script>
-  </body>
+      <script src="/static/js/script.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <!-- <script src="static/js/script.js"></script> -->
+      <script>
+         $(document).ready(function () {
+           $("select").formSelect();
+           // $("select").material_select();
+           $('.sidenav').sidenav();
+         });
+      </script>
+   </body>
 </html>
