@@ -13,7 +13,6 @@
           <div class="card-image overlay">
             <a href="{{url_for('read_recipe', recipe_id=recipe._id)}}"><img class="landing-recipe-images" src="{{recipe.recipe_cuisine_image}}"/>
             <span class="card-title">{{recipe.recipe_name}}</span>
-           
           </div>
           <div id="card-content" class="card-content activator">
             <p class="activator black-text">Recipe time: {{recipe.recipe_time}}</p>
@@ -23,26 +22,6 @@
             <br class="activator" />
             <p class="activator blue-text">Click for recipe description</p>
           </div>
-          <!-- <div class="card-reveal card-border">
-            <span class="card-title grey-text text-darken-4"
-              ><i class="material-icons right">close</i
-              >{{recipe.recipe_name}}</span
-            >
-            <div>
-              <p class="black-text description">{{recipe.recipe_description}}</p>
-            </div>
-            <div class="content-buttons">
-              <a
-                href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"
-                class="waves-effect waves-light light-green darken-1 btn-small"
-                >Edit</a
-              >
-              <a onclick="confirmDelete('recipe', '{{recipe._id}}')"
-                class="waves-effect waves-light red darken-3 btn-small"
-                >Delete</a
-              >
-            </div>
-          </div> -->
            </a>
         </div>
       </div>
@@ -51,7 +30,7 @@
   </div>
 </div>
 
-
+<!-- Javascript function, confirm delete -->
 <script>
     function confirmDelete(type, id) {
     if (type == 'recipe') {

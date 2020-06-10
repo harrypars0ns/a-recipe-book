@@ -90,24 +90,23 @@ p {
 }
 
 /* LANDING*/
-.about_heading{
-    margin-bottom: 20px;
+.about_heading {
+  margin-bottom: 20px;
 }
 .about p {
-    position: relative;
-    font-size: 16px;
+  position: relative;
+  font-size: 16px;
 }
 
-.landing_buttons_contain{
-    text-align: center;
-    margin-top: 30px;
+.landing_buttons_contain {
+  text-align: center;
+  margin-top: 30px;
 }
 
-.landing_buttons{
-    display: inline-block;
-    margin-bottom: 20px;
+.landing_buttons {
+  display: inline-block;
+  margin-bottom: 20px;
 }
-
 
 /* ADD/EDIT RECIPE */
 
@@ -124,25 +123,12 @@ p {
 }
 
 .errorbox {
-    background: rgba(245, 5, 5, 0.5);
-    padding: 10px;
-    border-radius: 5px;
-}
-
-@media screen and (max-width: 768px) {
-
-#content-desktop {display: none;}
-#content-mobile {display: block;}
-
-}
+  background: rgba(245, 5, 5, 0.5);
+  padding: 10px;
+  border-radius: 5px;
 }
 
 /* MEDIA QUERIES */
-
-@media (min-width: 994px) {
-  
-}
-
 
 @media (min-width: 1300px) {
   .recipe_container {
@@ -157,22 +143,20 @@ p {
   }
 }
 
-
 @media (max-width: 500px) {
-    .icon-hide {
+  .icon-hide {
     margin-left: 21px !important;
-    }
-    .icon-hide-max {
+  }
+  .icon-hide-max {
     margin-left: 0px !important;
-    }
-    .select-wrapper {
-        margin-left: 21px !important;
-    }
-    
+  }
+  .select-wrapper {
+    margin-left: 21px !important;
+  }
 }
 
 @media (max-width: 994px) {
-    nav .brand-logo {
+  nav .brand-logo {
     font-size: 1.5rem;
     margin-left: 0px;
   }
