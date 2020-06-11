@@ -48,7 +48,7 @@
          <div class="input-field col s11 m12">
             <i class="material-icons prefix hide-on-small-only">camera_alt</i>
             <select id="cuisine" name="recipe_cuisine_image" class="icons icon-hide" required >
-               <option value="" disabled selected >Choose your image!</option>
+               <option value="/static/images/health-food.jpg" selected >Choose your image!</option>
                {% for cuisine in cuisines %}
                <option value="{{cuisine.cuisine_image}}" data-icon="{{cuisine.cuisine_image}}">{{cuisine.cuisine_name}}</option>
                {% endfor %}
