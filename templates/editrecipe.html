@@ -18,7 +18,7 @@
          <div class="row">
             <div class="input-field col s12 input-fields">
                <i class="material-icons prefix hide-on-small-only">subject</i>
-               <input class="icon-hide" name="recipe_description" id="icon_prefix2" maxlength="185" type="text" value="{{recipe.recipe_description}}" required>
+               <input class="icon-hide" name="recipe_description" id="icon_prefix2" maxlength="1000" type="text" value="{{recipe.recipe_description}}" required>
                <label class="icon-hide" for="icon_prefix2">Recipe Description</label>
             </div>
          </div>
@@ -93,7 +93,7 @@
             <br>
             <div class="input-field col s12">
                <i class="material-icons prefix hide-on-small-only">subject</i>
-               <textarea name="ingredients" id="textarea2" class="materialize-textarea icon-hide ingredient-input" data-length="120" placeholder="Please enter each item on a new line" required>{{ingredients}}</textarea>
+               <textarea name="ingredients" id="textarea2" class="materialize-textarea icon-hide ingredient-input" data-length="120" maxlength="1950" placeholder="Please enter each item on a new line" required>{{ingredients}}</textarea>
             </div>
          </div>
          <br>
@@ -104,7 +104,7 @@
             <br>
             <div class="input-field col s12">
                <i class="material-icons prefix hide-on-small-only">subject</i>
-               <textarea name="instructions" id="textarea3" class="materialize-textarea icon-hide ingredient-input" data-length="120" placeholder="Please enter each step on a new line" required>{{instructions}}</textarea>
+               <textarea name="instructions" id="textarea3" class="materialize-textarea icon-hide ingredient-input" data-length="120" maxlength="1950" placeholder="Please enter each step on a new line" required>{{instructions}}</textarea>
             </div>
          </div>
          <div class="row">

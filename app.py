@@ -106,7 +106,7 @@ def insert_recipe():
 
     # Validate the recipe description. It can not be empty or longer than 185 characters long.
 
-    if len(description) == 0 or len(description) > 500:
+    if len(description) == 0 or len(description) > 1000:
         validation_errors.append('The description should not be empty or longer than 500 characters long.'
                                  )
 
@@ -118,14 +118,14 @@ def insert_recipe():
 
     # Validate the recipe ingredients. It can not be empty or longer than 1000 characters long.
 
-    if len(ingredients) == 0 or len(ingredients) > 1000:
-        validation_errors.append('The list of ingredients should not be empty or longer than 1000 characters long.'
+    if len(ingredients) == 0 or len(ingredients) > 2000:
+        validation_errors.append('The list of ingredients should not be empty or longer than 2000 characters long.'
                                  )
 
     # Validate the recipe instructions. It can not be empty or longer than 1500 characters long.
 
-    if len(instructions) == 0 or len(instructions) > 1500:
-        validation_errors.append('The list of instructions should not be empty or longer than 1500 characters long.'
+    if len(instructions) == 0 or len(instructions) > 2000:
+        validation_errors.append('The list of instructions should not be empty or longer than 2000 characters long.'
                                  )
 
     # If no errors on validation, display error message.
@@ -205,7 +205,7 @@ def update_recipe(recipe_id):
 
     # Validate the recipe description. It can not be empty or longer than 185 characters long.
 
-    if len(description) == 0 or len(description) > 500:
+    if len(description) == 0 or len(description) > 1000:
         validation_errors.append('The description should not be empty or longer than 500 characters long.'
                                  )
 
@@ -217,13 +217,13 @@ def update_recipe(recipe_id):
 
     # Validate the recipe ingredients. It can not be empty or longer than 1000 characters long.
 
-    if len(ingredients) == 0 or len(ingredients) > 1000:
+    if len(ingredients) == 0 or len(ingredients) > 2000:
         validation_errors.append('The list of ingredients should not be empty or longer than 1000 characters long.'
                                  )
 
     # Validate the recipe instructions. It can not be empty or longer than 1500 characters long.
 
-    if len(instructions) == 0 or len(instructions) > 1500:
+    if len(instructions) == 0 or len(instructions) > 2000:
         validation_errors.append('The list of instructions should not be empty or longer than 1500 characters long.'
                                  )
 
@@ -252,7 +252,7 @@ def update_recipe(recipe_id):
         'ingredients': all_ingredients,
         'instructions': all_instructions,
         })
-    return redirect(url_for('get_recipes'))
+    return redirect(url_for('read_recipe', recipe_id=recipe_id))
 
 
 @app.route('/delete_recipe/<recipe_id>')
