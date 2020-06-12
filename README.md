@@ -12,17 +12,23 @@ Our recipes are all made to fit to a Paleo diet. The paleo diet is designed to r
 
 ### Strategy
 
-I want to let people find the recipe they want as quickly and in as few clicks as possible using nice visually pleasing cards that display the recipe and some basic information. The site should be aesthetically pleasing, simple and professional.
+I want to let people find recipes they never cooked before and recipes they create as quickly and in as few clicks as possible. Using nice visually pleasing cards that display the recipe, an image and some basic information. The site should be aesthetically pleasing, simple and professional.
+
+The site will be a digital cookbook that is interactive and editable. 
 
 ### Scope
 
 The function of the site will be to give users a simple way to find, create, read, update and delete Paleo/Keto recipes.
-You will be able to filter the recipes by vegetarian and extra healthy options. 
+You will be able to filter the recipes by vegetarian and extra healthy options.
 
 ### Structure
 
 The site was designed to be as user friendly as possible. I wanted to make sure that the UX was viable for people with bad eye-sight, people with dyslexia,
 those who aren't comfortable using complex websites and the elderly.
+
+The form inputs are clearly labeled and the text on the cards easily readable.
+
+The validation lets you know if you are not inserting a complete recipe. 
 
 The site is very intuitive so nobody will have trouble accessing all the features. Whether you are a pro-cook, rookie or just looking for somewhere to get inspiration for recipes Primal Recipes will give you no problems in your user experience. 
 
@@ -148,5 +154,3 @@ I used Pexels (stock images) for my images, and font awesome for my icons .
 
 - Thanks to Brian Macharia for all the help he's given me making this. Couldn't have done it without you.
 - Thanks to Luca from CodeInstitute for help with environment variables.
-
- 

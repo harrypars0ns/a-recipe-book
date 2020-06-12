@@ -1,0 +1,38 @@
+User Stories
+
+As someone who is new to Paleo I want to see what recipes are on PR because it will help me find out what is allowed.
+
+As someone who has been on a Keto diet for a few months I want somewhere to store my favorite recipes so I dont have to trawl the internet looking for the one version of a recipe I like.
+
+As somebody who likes to invent new recipes I need an app I can add my own recipes as they are not found online.
+
+As somebody who is having people that are Paleo round for dinner I need to know what I can and can't cook.
+
+As somebody considering starting a Paleo diet I would like to know what dishes are allowed so I know whether I really want to commit to a strict diet.
+
+As a user I expect that when I add my own recipe it will look the same as any of the pre-loaded recipes. 
+
+As a user I expect that when I edit a recipe I only have to edit the one field that needs updating so I don't have to fill out the whole form.
+
+As a user I expect the site to function with no lag or fault in the way the site runs. 
+
+As a vegetarian I am able to choose that only vegetarian recipes be displayed.
+
+As somebody with special dietary needs I am able to delete recipes that I am not allowed.
+
+As a user I expect to be asked whether I DEFINITELY want to delete a recipe. This is so I don't accidentlly delete something I shouldn't.
+
+As a user entering my own recipe I expect the form to remind me to fill in all fields before submitting, so that I dont insert an incomplete recipe into the database.
+
+As a professional cook with my own way of making certain recipes, I want to be able to edit the pre-loaded recipes with the ingredients and amounts that I think is best.
+
+As a new cook I want clear instructions seperated so I don't get lost or confused.
+
+As somebody with bad eye-sight who has trouble looking at screens I expect the recipes to be easily printable. 
+
+As someone with dyslexia I expect I will be able to read everything on screen.
+
+As a user I expect to be able to share the URL link of a recipe with a friend.
+
+As a user I expect to be notified if one of the form fields is not filled in correctly and given the chance to correct the error.
+
