@@ -33,11 +33,12 @@ The validation lets you know if you are not inserting a complete recipe.
 The site is very intuitive so nobody will have trouble accessing all the features. Whether you are a pro-cook, rookie or just looking for somewhere to get inspiration for recipes Primal Recipes will give you no problems in your user experience. 
 
 ### Skeleton
-PUT PRIMAL RECIPES WIREFRAMES HERE. YET TO UPLOAD.
 
-[Wireframe plan 1]  (https://github.com/harrypars0ns/milestone-2/blob/master/wireframes/LSSFwireframe.png)
+[Wireframe plan 1 - Add/Edit Recipe Form]  (https://github.com/harrypars0ns/a-recipe-book/blob/master/Wireframes/addeditrecipe.jpg)
 
-[Wireframe plan 2]  (https://github.com/harrypars0ns/milestone-2/blob/master/wireframes/LSSFwireframe2.png)
+[Wireframe plan 2 - Read Recipe Page]  (https://github.com/harrypars0ns/a-recipe-book/blob/master/Wireframes/readrecipe.jpg)
+
+[Wireframe plan 2 - Main Recipes Page]  (https://github.com/harrypars0ns/a-recipe-book/blob/master/Wireframes/recipes.jpg)
 
 ### Surface
   
