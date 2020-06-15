@@ -304,7 +304,7 @@ def delete_recipe(recipe_id):
     return redirect(url_for('get_recipes'))
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(
         host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
