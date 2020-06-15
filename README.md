@@ -55,7 +55,7 @@ The app has 6 basic functions, to allow you to: display, filter create, read, up
 
 When adding recipes the form fields contain: the recipe name, description, cost, cooking time, cuisine (this selects the image displayed on the recipes card), ingredients separated in an array in the database and instructions/steps separated in an array in the database.
 
-When deleting a recipe a Javascript function is run that asks for confirmation before permanently deleting from the database.
+When deleting a recipe a Javascript function is run that asks for confirmation before permanently deleting from the database. This is fairly trivial and not loaded before the HTML so it is included in script tags in the HTML document.
 
 When editing a recipe the selected recipe's information in already in the form so you don't have to update every single field when you just want to edit (for example) the description.  
 

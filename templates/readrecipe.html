@@ -1,9 +1,10 @@
 {% extends 'base.html' %} {% block content %}
-
+<!-- Recipe is displayed in full-->
 <div class="container">
+<!-- Name -->
 	<h4 class="cursive">{{ recipe.recipe_name }}</h4>
 	<br />
-
+    <!-- Description -->
 	<div class="recipe_container">
 		<div class="recipe-subhead">
 			<h5 class="recipe-subhead">
@@ -23,6 +24,7 @@
 			</h5>
 		</div>
 		<div class="ingredient">
+            <!-- Ingredients --> 
             {% for ingredient in recipe.ingredients %}
             <p>{{ ingredient }}</p>
             {% endfor %}
@@ -31,12 +33,14 @@
                 <i class="material-icons">format_list_numbered
                 </i>Instructions
             </h5>
-                {% for instruction in recipe.instructions %}
-                    <p class="ingredient">{{ instruction }}</p>
-                {% endfor %}
+            <!-- Instructions -->
+            {% for instruction in recipe.instructions %}
+                <p class="ingredient">{{ instruction }}</p>
+            {% endfor %}
 		</div>
         <br>
         <br>
+        <!-- Edit and Delete -->
         <div class='read-recipe-buttons'>
 		<a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"
 			class="waves-effect waves-light light-green darken-1 btn-small">Edit</a>
@@ -51,6 +55,7 @@
         <br>
 	</div>
 </div>
+<!-- Javascript function, confirms before deleting a recipe. For safety. -->
 <script>
     function confirmDelete(type, id) {
     if (type == 'recipe') {

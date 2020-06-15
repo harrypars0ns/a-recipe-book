@@ -26,7 +26,7 @@
          <div class="row">
             <div class="input-field col s5 m6">
                <i class="material-icons prefix hide-on-small-only">attach_money</i>
-               <select class="icon-hide" id="recipe_cost" name="recipe_cost" required>
+               <select class="icon-hide" id="recipe_cost" name="recipe_cost">
                   <option value="{{recipe.recipe_cost}}" selected>{{recipe.recipe_cost}}</option>
                   <option value="£">£</option>
                   <option value="££">££</option>
@@ -44,11 +44,10 @@
          <div class="row">
             <div class="input-field col s12 m10">
                <i class="material-icons prefix hide-on-small-only">camera_alt</i>
-               <select id="cuisine_image" name="recipe_cuisine_image" class="icons icon-hide" required>
-                  <option value="" disabled>Choose your image!</option>
+               <select id="cuisine_image" name="recipe_cuisine_image" class="icons icon-hide">
                   {% for cuisine in cuisines %}
                   {% if cuisine.cuisine_image == recipe.recipe_cuisine_image %}
-                  <option value="{{cuisine.cuisine_image}}" data-icon="{{cuisine.cuisine_image}}" selected >{{cuisine.cuisine_name}}</option>
+                  <option value="{{cuisine.cuisine_image}}" data-icon="{{cuisine.cuisine_image}}" selected>{{cuisine.cuisine_name}}</option>
                   {% else %}
                   <option value="{{cuisine.cuisine_image}}" data-icon="{{cuisine.cuisine_image}}" >{{cuisine.cuisine_name}}</option>
                   {% endif %}  
@@ -60,6 +59,7 @@
          <!-- Switches -->
          <div class="row">
             <div class="switch col s6">
+            <!-- Healthy switch -->
                <i class="material-icons prefix weight hide-on-small-only">fitness_center</i>
                <label class="icon-hide-max healthy-label">
                {% if recipe.is_healthy %}
@@ -73,6 +73,7 @@
             </div>
             <div class="s0 m0 l0"></div>
             <div class="switch col s6">
+            <!-- Vegetarian switch -->
                <i class="material-icons prefix weight hide-on-small-only">local_florist</i>
                <label class="icon-hide-max healthy-label">
                {% if recipe.is_vegetarian %}
@@ -107,6 +108,7 @@
                <textarea name="instructions" id="textarea3" class="materialize-textarea icon-hide ingredient-input" data-length="120" maxlength="1950" placeholder="Please enter each step on a new line" required>{{instructions}}</textarea>
             </div>
          </div>
+        <!-- Submit/Update recipe -->
          <div class="row">
             <button
                class="btn waves-effect light-green darken1 waves-light"
