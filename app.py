@@ -124,13 +124,14 @@ def insert_recipe():
                             )
 
     # Validate the recipe time.
-    # It can not be empty or longer than 12 characters long
-    # (enough space for a 3 digit number and a unit of measurement).
+    # It can not be empty or longer than 18 characters long
+    # (enough space for a 3 digit number and a unit of measurement
+    # or eg 1 hour 15 minutes.
 
-    if len(time) == 0 or len(time) > 12:
+    if len(time) == 0 or len(time) > 18:
         validation_errors.append(
             "The recipe time should not be empty "
-            "or longer than 12 characters long."
+            "or longer than 18 characters long."
                             )
 
     # Validate the recipe ingredients.
@@ -242,13 +243,14 @@ def update_recipe(recipe_id):
                                  )
 
     # Validate the recipe time.
-    # It can not be empty or longer than 12 characters long
-    # (enough space for a 3 digit number and a unit of measurement).
+    # It can not be empty or longer than 18 characters long
+    # (enough space for a 3 digit number and a unit of measurement
+    # or eg 1 hour 15 minutes.
 
-    if len(time) == 0 or len(time) > 12:
+    if len(time) == 0 or len(time) > 18:
         validation_errors.append(
             "The recipe time should not be empty "
-            "or longer than 12 characters long."
+            "or longer than 18 characters long."
                                  )
 
     # Validate the recipe ingredients.

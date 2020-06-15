@@ -69,6 +69,10 @@ The read recipe pages are laid out simple to make them very easily printable.
 
 - Another great feature to let users input the contents of their fridge and the app suggests recipes that have ingredients that the user already has.
 
+- Vegan and Keto Filters
+
+- Scrolling rows where each row is a different category of food eg. Brunches, Stews, Soups
+
 - If I had a user profile database users would be able to upload their own images. 
 
 - A database of ingredients with the macro-nutrient information would allow the app to calculate the nutritional information of a whole recipe. This would be perfect for a Keto diet.
@@ -123,6 +127,8 @@ All images are cropped to the same aspect ratio so they look good on all screens
 
 I ran the CSS and HTML through the W3C Jigsaw validator with no errors found. The Javascript was run through the JSHint validator with no major issues. The Python was ran through a validator with no issues as well as checked with pep8online.com.
 
+I had trouble when deploying my project to Heroku after setting my environment variables 
+
 The site works across many browsers including: Chrome, Firefox, Safari and Edge.
 
 ## Deployment
@@ -135,7 +141,7 @@ I have my git repository hosted on Github and the website is hosted on Heroku. I
 
 To deploy on Heroku you have to:
 Create an app on the main page of your Heroku dash.
-Go to settings, press 'reveal config vars' I used IP (0.0.0.0), PORT (5000), Set the name and URI.
+Go to settings, press 'reveal config vars' I used IP (0.0.0.0), PORT (5000), Secret Key and MongoDB URI string.
 Gitpod has Heroku already installed so just use 'heroku login' in your terminal.
 Add a requirements.txt with 'pip3 freeze > requirements.txt'.
 Add a Procfile with 'echo web: python app.py > Procfile'.
