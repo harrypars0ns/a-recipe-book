@@ -35,7 +35,8 @@ def get_recipes():
 
 @app.route('/vegetarian')
 def vegetarian():
-    """ Route for page with all recipes where is_vegetarian = on (on = true/selected)
+    """ Route for page with all recipes where is_vegetarian = on
+    (on = true/selected)
     """
 
     veggie_recipes = mongo.db.recipes.find({'is_vegetarian': 'on'})
@@ -53,14 +54,16 @@ def healthy():
 
     healthy_recipes = mongo.db.recipes.find({'is_healthy': 'on'})
     all_cuisines = mongo.db.cuisines.find()
-    return render_template('recipes.html', page_title='Healthy Recipes'
-                           , recipes=healthy_recipes,
+    return render_template('recipes.html',
+                           page_title='Healthy Recipes',
+                           recipes=healthy_recipes,
                            cuisines=all_cuisines)
 
 
 @app.route('/read_recipe/<recipe_id>')
 def read_recipe(recipe_id):
-    """ Route for recipe details page, this is where users will view each recipe. You can access the delete and edit_recipe buttons from this page
+    """ Route for recipe details page, this is where users will view each recipe.
+    You can access the delete and edit_recipe buttons from this page
     """
 
     the_recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
@@ -81,7 +84,9 @@ def add_recipe():
 
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
-    """ Inserts a recipe to the MongoDB database using the input_data from the add_recipe form. Uses front and back end validation
+    """ Inserts a recipe to the MongoDB database using the input_data
+    from the add_recipe form.
+    Uses front and back end validation
     """
 
     recipes = mongo.db.recipes
@@ -98,42 +103,58 @@ def insert_recipe():
     ingredients = request.form.get('recipe_ingredients', '')
     instructions = request.form.get('recipe_instructions', '')
 
-    # Validate the recipe name. It can not be empty or longer than 50 characters long.
+    # Validate the recipe name.
+    # It can not be empty or longer than 50 characters long.
 
     if len(name) == 0 or len(name) > 50:
-        validation_errors.append('The title should not be empty or longer than 50 characters long.'
-                                 )
+        validation_errors.append(
+            "The title should not be empty or longer than 50 characters long."
+                            )
 
-    # Validate the recipe description. It can not be empty or longer than 185 characters long.
+    # Validate the recipe description.
+    # It can not be empty or longer than 1000 characters long.
 
     if len(description) == 0 or len(description) > 1000:
-        validation_errors.append('The description should not be empty or longer than 500 characters long.'
-                                 )
+        validation_errors.append(
+            "The description should not be empty or longer than "
+            "1000 characters long."
+                            )
 
-    # Validate the recipe time. It can not be empty or longer than 12 characters long (enough space for a 3 digit number and a unit of measurement).
+    # Validate the recipe time.
+    # It can not be empty or longer than 12 characters long
+    # (enough space for a 3 digit number and a unit of measurement).
 
     if len(time) == 0 or len(time) > 12:
-        validation_errors.append('The recipe time should not be empty or longer than 12 characters long.'
-                                 )
+        validation_errors.append(
+            "The recipe time should not be empty "
+            "or longer than 12 characters long."
+                            )
 
-    # Validate the recipe ingredients. It can not be empty or longer than 1000 characters long.
+    # Validate the recipe ingredients.
+    # It can not be empty or longer than 1000 characters long.
 
     if len(ingredients) == 0 or len(ingredients) > 2000:
-        validation_errors.append('The list of ingredients should not be empty or longer than 2000 characters long.'
+        validation_errors.append(
+            "The list of ingredients should not be empty "
+            "or longer than 2000 characters long."
                                  )
 
-    # Validate the recipe instructions. It can not be empty or longer than 1500 characters long.
+    # Validate the recipe instructions.
+    # It can not be empty or longer than 1500 characters long.
 
     if len(instructions) == 0 or len(instructions) > 2000:
-        validation_errors.append('The list of instructions should not be empty or longer than 2000 characters long.'
+        validation_errors.append(
+            "The list of instructions should not "
+            "be empty or longer than 2000 characters long."
                                  )
 
     # If no errors on validation, display error message.
 
     if len(validation_errors) > 0:
         error_string = '\n'.join(validation_errors)
-        return render_template('addrecipe.html', page_title='Add Recipe'
-                               , errors=error_string,
+        return render_template('addrecipe.html',
+                               page_title='Add Recipe',
+                               errors=error_string,
                                recipe=the_recipe, cuisines=all_cuisines)
 
     the_recipe = recipes.insert_one({
@@ -154,7 +175,8 @@ def insert_recipe():
 
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
-    """ Route to the same form as add_recipe form with the details of the recipe the user wishes to edit
+    """ Route to the same form as add_recipe form
+    with the details of the recipe the user wishes to edit
     """
 
     the_recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
@@ -179,7 +201,8 @@ def edit_recipe(recipe_id):
 
 @app.route('/update_recipe/<recipe_id>', methods=['POST'])
 def update_recipe(recipe_id):
-    """ Updates the selected recipe with the information in the edit_recipe form. Uses front and back end validation
+    """ Updates the selected recipe with the information in the edit_recipe form.
+    Uses front and back end validation
     """
 
     recipes = mongo.db.recipes
@@ -197,34 +220,50 @@ def update_recipe(recipe_id):
     ingredients = request.form.get('ingredients', '')
     instructions = request.form.get('instructions', '')
 
-    # Validate the recipe name. It can not be empty or longer than 50 characters long.
+    # Validate the recipe name.
+    # It can not be empty or longer than 50 characters long.
 
     if len(name) == 0 or len(name) > 50:
-        validation_errors.append('The title should not be empty or longer than 50 characters long.'
+        validation_errors.append(
+            "The title should not be empty "
+            "or longer than 50 characters long."
                                  )
 
-    # Validate the recipe description. It can not be empty or longer than 185 characters long.
+    # Validate the recipe description.
+    # It can not be empty or longer than 1000 characters long.
 
     if len(description) == 0 or len(description) > 1000:
-        validation_errors.append('The description should not be empty or longer than 500 characters long.'
+        validation_errors.append(
+            "The description should not be empty "
+            "or longer than 500 characters long."
                                  )
 
-    # Validate the recipe time. It can not be empty or longer than 12 characters long (enough space for a 3 digit number and a unit of measurement).
+    # Validate the recipe time.
+    # It can not be empty or longer than 12 characters long
+    # (enough space for a 3 digit number and a unit of measurement).
 
     if len(time) == 0 or len(time) > 12:
-        validation_errors.append('The recipe time should not be empty or longer than 12 characters long.'
+        validation_errors.append(
+            "The recipe time should not be empty "
+            "or longer than 12 characters long."
                                  )
 
-    # Validate the recipe ingredients. It can not be empty or longer than 1000 characters long.
+    # Validate the recipe ingredients.
+    # It can not be empty or longer than 1000 characters long.
 
     if len(ingredients) == 0 or len(ingredients) > 2000:
-        validation_errors.append('The list of ingredients should not be empty or longer than 1000 characters long.'
+        validation_errors.append(
+            "The list of ingredients should not be empty or "
+            "longer than 1000 characters long."
                                  )
 
-    # Validate the recipe instructions. It can not be empty or longer than 1500 characters long.
+    # Validate the recipe instructions.
+    # It can not be empty or longer than 1500 characters long.
 
     if len(instructions) == 0 or len(instructions) > 2000:
-        validation_errors.append('The list of instructions should not be empty or longer than 1500 characters long.'
+        validation_errors.append(
+            "The list of instructions should not be empty or "
+            "longer than 1500 characters long."
                                  )
 
     # If no errors on validation, display error message.
@@ -257,12 +296,16 @@ def update_recipe(recipe_id):
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
-    """ Deletes the selected recipe. Uses a Javascript function to confirm delete in <script> tags at the bottom of the template
+    """ Deletes the selected recipe. Uses a Javascript function to confirm delete
+    in <script> tags at the bottom of the template
     """
 
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
 
-if __name__ == '__main__':
-    app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT'
-            )), debug=True)
+
+if __name__ == "__main__":
+    app.run(
+        host=os.environ.get('IP', "0,0,0,0"),
+        port=int(os.environ.get('PORT', 5000)),
+        debug=True)

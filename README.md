@@ -129,6 +129,8 @@ The site works across many browsers including: Chrome, Firefox, Safari and Edge.
 
 I am hosting the site on Heroku on the master branch. I had a already been committing to GitHub before.
 
+My MongoDB SRV string and secret key is in an environment variable with .gitignore set.
+
 I have my git repository hosted on Github and the website is hosted on Heroku. I have commits after I've finished a feature or fixed a bug. When I use git push the Github repository is updated and I use git push heroku master to push the updates to Heroku.
 
 To deploy on Heroku you have to:
