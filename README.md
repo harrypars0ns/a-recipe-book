@@ -1,7 +1,5 @@
 # Primal Recipes
 
-<br/>
-
 ## Table Of Contents
 
 - General Information
@@ -14,9 +12,6 @@
 - Deployment
 - Credits
 - Acknowledgements
-
-<br/>
-
 
 ## Demo
 
