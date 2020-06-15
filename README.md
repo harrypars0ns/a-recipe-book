@@ -1,5 +1,30 @@
 # Primal Recipes
 
+<br/>
+
+## Table Of Contents
+
+- General Information
+- Demo
+- UX and Wireframes
+- Features
+- Features Left to Implement
+- Technologies Used
+- Testing and Validation
+- Deployment
+- Credits
+- Acknowledgements
+
+<br/>
+
+
+## Demo
+
+A live demo of the website can be found [here](https://a-recipe-book.herokuapp.com/).
+
+
+## General Information
+
 Data Centric Development Milestone Project.
 
 In 2019, I started a Paleo diet, a diet of whole ingredients with no processed sugars. Since January 2020 I have been following a Keto diet which has similar rules but stricter. Since starting these diets I have been at a loss for a good way to find good Paleo/Keto recipes as well as a place to keep all MY recipes together. Primal Recipes is both in one app.
