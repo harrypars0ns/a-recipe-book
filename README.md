@@ -13,9 +13,7 @@
 - Credits
 - Acknowledgements
 
-## Demo
 
-A live demo of the website can be found [here](https://a-recipe-book.herokuapp.com/).
 
 
 ## General Information
@@ -169,7 +167,6 @@ Add a Procfile with 'echo web: python app.py > Procfile'.
 If you want to run the code locally you can use 'git clone'. Alternatively you 
 can download all the files in a .zip file and open 'index.html' in your browser of choice.
 
-## Credits
 
 ### Content
 
@@ -181,5 +178,5 @@ I used Pexels (stock images) for my images, and font awesome for my icons .
 
 ### Acknowledgements
 
-- Thanks to Brian Macharia for all the help he's given me making this. Couldn't have done it without you.
+- Thanks to Brian Macharia.
 - Thanks to Luca from CodeInstitute for help with environment variables.
