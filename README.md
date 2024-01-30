@@ -149,23 +149,11 @@ I had trouble when deploying my project to Heroku after setting my environment v
 
 The site works across many browsers including: Chrome, Firefox, Safari and Edge.
 
-## Deployment
 
-I am hosting the site on Heroku on the master branch. I had a already been committing to GitHub before.
+
 
 My MongoDB SRV string and secret key is in an environment variable with .gitignore set.
 
-I have my git repository hosted on Github and the website is hosted on Heroku. I have commits after I've finished a feature or fixed a bug. When I use git push the Github repository is updated and I use git push heroku master to push the updates to Heroku.
-
-To deploy on Heroku you have to:
-Create an app on the main page of your Heroku dash.
-Go to settings, press 'reveal config vars' I used IP (0.0.0.0), PORT (5000), Secret Key and MongoDB URI string.
-Gitpod has Heroku already installed so just use 'heroku login' in your terminal.
-Add a requirements.txt with 'pip3 freeze > requirements.txt'.
-Add a Procfile with 'echo web: python app.py > Procfile'.
-
-If you want to run the code locally you can use 'git clone'. Alternatively you 
-can download all the files in a .zip file and open 'index.html' in your browser of choice.
 
 
 ### Content
